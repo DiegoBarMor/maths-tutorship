@@ -19,8 +19,8 @@
   - **Exercise**: 4, 6, 18
 
 ### Quadratic Formula
-  - **Examples**: 1, 2
-  - **Exercise**: 3, 7
+  - **Examples**: 2, 7
+  - **Exercise**: 3, 6
 
 ### Radical Equations
 - **Examples**: 1, 13, 14
@@ -38,7 +38,7 @@
 - **Examples**: 1, 2
 - **Exercise**: 3, 5
 
-### Problems
+### Problems (Systems of Equations)
 - **Examples**: 7, 9
 - **Exercise**: 8, 10
 
