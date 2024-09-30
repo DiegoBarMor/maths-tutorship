@@ -79,6 +79,145 @@
             \end{aligned}$$
           </p>
 
+      <h2>Exponents and Logarithms</h2>
+        <p>
+          <b>Definition</b>
+          $$\begin{aligned}
+            ln(x)     &= log_e(x) && ln(e)     = 1 \\
+            ln(e^x)   &= x        && e^{ln(x)} = x \\
+          \end{aligned}$$
+          <!-- e^x &< e^y     && \text{ for } 0 < x < y \\
+          ln(x) &< ln(y) && \text{ for } 0 < x < y \\ -->
+
+          <b>Properties</b>
+          $$\begin{aligned}
+            e^0             &= 1       && ln(1)   = 0 \\
+            e^x e^y         &= e^{x+y} && ln(xy) = ln(x) + ln(y) \\
+            \frac{e^x}{e^y} &= e^{x-y} && ln(\frac{x}{y}) = ln(x) - ln(y) \\
+            (e^x)^y         &= e^{xy}  && ln(x^y) = y \text{ } ln(x) \\
+          \end{aligned}$$
+        </p>
+
+      <h2>Trigonometric Formulas</h2>
+        <h3>Basic Formulas</h3>
+          <p>
+            <b>Symmetry</b>
+            $$\begin{aligned}
+              sin(-\theta) &= -sin(\theta) \\
+              cos(-\theta) &=  cos(\theta) \\
+              tan(-\theta) &= -tan(\theta) \\
+            \end{aligned}$$
+
+            <b>Periodicity</b>
+            $$\begin{aligned}
+              sin(\theta) &= sin(\theta + 2\pi) \\
+              cos(\theta) &= cos(\theta + 2\pi) \\
+              tan(\theta) &= tan(\theta +  \pi) \\
+            \end{aligned}$$
+
+            <b>Relation between functions</b>
+            $$\begin{aligned}
+              tan(\theta) &= \frac{sin(\theta)}{cos(\theta)} \\
+              sin(\theta) &= cos(\frac{\pi}{2} - \theta) \\
+              cos(\theta) &= sin(\frac{\pi}{2} - \theta) \\
+            \end{aligned}$$
+
+            <b>Pythagorean Identity</b>
+            $$\begin{aligned}
+              sin^2(\theta) + cos^2(\theta) &= 1 \\
+            \end{aligned}$$
+          </p>
+
+        <h3>Basic Plots</h3>
+          <b>Sine</b>
+            <figure>
+              <img src="figures/cs-sin.png" alt="figures/cs-sin.png">
+            </figure>
+
+          <b>Cosine</b>
+            <figure>
+              <img src="figures/cs-cos.png" alt="figures/cs-cos.png">
+            </figure>
+
+          <b>Tangent</b>
+            <figure>
+              <img src="figures/cs-tan.png" alt="figures/cs-tan.png">
+            </figure>
+
+          <b>Sine and Cosine</b>
+            <figure>
+              <img src="figures/cs-sin_cos.png" alt="figures/cs-sin_cos.png">
+            </figure>
+
+          <b>Sine and Tangent</b>
+            <figure>
+              <img src="figures/cs-sin_tan.png" alt="figures/cs-sin_tan.png">
+            </figure>
+
+      <h2>Function Manipulations</h2>
+        <p>
+          One can perform basic manipulations on a function $f(x) = y$ into a new function $g(x)$ with the same "shape" but shifted or scaled along the cartesian plane.
+        </p>
+
+        <h3>Shifting along $y$</h3>
+          <p>
+            Add a constant $k$ to the function $f$ to shift it along the y-axis: $g(x) = k + f(x)$. Given a point $x_0$ in the x-axis:
+            $$\begin{aligned}
+              f(x_0) &= y_0 \\
+              g(x_0) &= y_1 = k + f(x_0) = k + y_0 \\
+              y_1 &= y_0 + k \\
+            \end{aligned}$$
+
+            Note that for $k > 0$ the function is shifted towards higher values of $y$ (i.e. upwards) and for $k < 0$ it shifts towards lower values of $y$ (i.e. downwards). The x-axis remains unaffected. Example of $f(x) = sin(x)$ in red and $g(x) = k + sin(x)$ in blue:
+            <figure>
+              <img src="animations/cs-shift_y.gif" alt="animations/cs-shift_y.gif">
+            </figure>
+          </p>
+
+        <h3>Scaling along $y$</h3>
+          <p>
+            Multiply the function $f$ with a constant $k$ to scale it along the y-axis: $g(x) = k*f(x)$. Given a point $x_0$ in the x-axis:
+            $$\begin{aligned}
+              f(x_0) &= y_0 \\
+              g(x_0) &= y_1 = k * f(x_0) = k * y_0 \\
+              y_1 &= y_0 * k \\
+            \end{aligned}$$
+
+            Note that for $k > 1$ the function "stretches" along $y$ and for $0 < k < 1$ the function "shrinks" along $y$. For $k < 0$ a similar behaviour occurs, with the function being "inverted" along $y$. The x-axis remains unaffected. Example of $f(x) = sin(x)$ in red and $g(x) = k * sin(x)$ in blue:
+            <figure>
+              <img src="animations/cs-scale_y.gif" alt="animations/cs-scale_y.gif">
+            </figure>
+          </p>
+
+        <h3>Shifting along $x$</h3>
+          <p>
+            Add a constant $k$ to the argument of the function $f$ to shift it along the x-axis: $g(x) = f(x + k)$. Given a point $x_0$ in the x-axis and its shifted counterpart $x_1 = x_0 - k$:
+            $$\begin{aligned}
+              g(x_1) &= f(x_1 + k) = f(x_0 - k + k) \\
+              g(x_1) &= f(x_0) \\
+            \end{aligned}$$
+
+            Note that for $k > 0$ the function is shifted towards lower values of $x$ (i.e. to the left) and for $k < 0$ it shifts towards higher values of $x$ (i.e. to the right). The y-axis remains unaffected. Example of $f(x) = sin(x)$ in red and $g(x) = sin(x + k)$ in blue:
+            <figure>
+              <img src="animations/cs-shift_x.gif" alt="animations/cs-shift_x.gif">
+            </figure>
+          </p>
+
+        <h3>Scaling along $x$</h3>
+          <p>
+            Multiply the argument of the function $f$ with a constant $k$ to scale it along the x-axis: $g(x) = f(k*x)$. Given a point $x_0$ in the x-axis its shifted counterpart $x_1 = \frac{1}{k} x_0$:
+            $$\begin{aligned}
+              g(x_1) &= f(k x_1) = f(k \frac{1}{k} x_0) \\
+              g(x_1) &= f(x_0) \\
+            \end{aligned}$$
+
+            Note that for $k > 1$ the function "shrinks" along $x$ and for $0 < k < 1$ the function "stretches" along $x$. For $k < 0$ a similar behaviour occurs, with the function being "inverted" along $x$. The y-axis remains unaffected. Example of $f(x) = sin(x)$ in red and $g(x) = sin(x * k)$ in blue:
+            <figure>
+              <img src="animations/cs-scale_x.gif" alt="animations/cs-scale_x.gif">
+            </figure>
+          </p>
+
+
     </div>
   </body>
 </html>
