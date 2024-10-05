@@ -12,16 +12,13 @@
     <script type="text/javascript" async
       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    <script>
-      function imageChange(img, src){ document.querySelector(".image[name='" + img + "']").src = src; }
-    </script>
   </head>
   <body>
     <nav class="navbar">
       <div class="line">
         <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/index.html">Index</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#polynomials">Cheatsheet</a>
         <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td1.html">TD 1</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html">Cheatsheet</a>
       </div>
     </nav>
 
@@ -29,10 +26,24 @@
       <h2>Document with the exercises (<a href="https://drive.google.com/file/d/1A7LNBRUiRapKCQJ7P0jgIUpy1yr2I7ke/" target="_blank">Download</a>)</h2>
         <iframe src="https://drive.google.com/file/d/1A7LNBRUiRapKCQJ7P0jgIUpy1yr2I7ke/preview" allow="autoplay"></iframe>
 
-      <h2>Factoring</h2>
+      <h2>Index</h2>
+        <ul>
+          <li><a class="btn" href="#factoring">Factoring</a></li>
+          <li><a class="btn" href="#quadratic-formula">Quadratic Formula</a></li>
+          <li><a class="btn" href="#radical">Radical Equations</a></li>
+          <li><a class="btn" href="#abs">Absolute Value Equations</a></li>
+          <li><a class="btn" href="#rational">Rational Equations</a></li>
+          <li><a class="btn" href="#analysis-polynomial">Analyzing and Solving Polynomial Equations</a></li>
+          <li><a class="btn" href="#problems">Problems (Systems of Equations)</a></li>
+          <li><a class="btn" href="#inequalities-multistep">Multistep Inequalities</a></li>
+          <li><a class="btn" href="#inequalities-quadratic">Quadratic Inequalities</a></li>
+        </ul>
+
+
+      <h2 id="factoring">Factoring</h2>
         <h3>Example "1"</h3>
           <p>
-            By rearranging the original expression, $x$ can be extracted as a common denominator for the first two terms, while $-5$ is also extracted from the other terms. The factor $(x^2-1)$ can then be extracted as a common denominator too. Furthermore, $(x^2-1)$ can be interpreted as $x^2-1^2$ and factorized into $(x+1)(x-1)$ using a common <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html">factorization pattern</a> for quadratics.
+            By rearranging the original expression, $x$ can be extracted as a common denominator for the first two terms, while $-5$ is also extracted from the other terms. The factor $(x^2-1)$ can then be extracted as a common denominator too. Furthermore, $(x^2-1)$ can be interpreted as $x^2-1^2$ and factorized into $(x+1)(x-1)$ using a common <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#polynomials">factorization pattern</a> for quadratics.
 
             $$\begin{aligned}
               x^3 - 5x^2 - x + 5 &= x^3 - x - 5x^2 + 5 \\
@@ -47,7 +58,7 @@
           <p>
             This expression can be simplified to a quadratic by replacing $x^3$ with another variable, say $w$. By finding the divisors of $-27$, one can notice that $(-27*1=-27)$ and $(-27+1=-26)$, allowing the factorization of this quadratic. <br><br>
 
-            After replacing $w$ back to $x^3$, the remaining cubics of the form $x^3+k^3$ and $x^3-k^3$ can be easily factorized by applying their respective <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html">pattern</a>.
+            After replacing $w$ back to $x^3$, the remaining cubics of the form $x^3+k^3$ and $x^3-k^3$ can be easily factorized by applying their respective <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#polynomials">pattern</a>.
 
             $$\begin{aligned}
               x^6-26x^3-27 &= w^2-26x-27 &&\text{with: } w = x^3 \\
@@ -83,9 +94,9 @@
           </p>
 
 
-      <h2>Quadratic Formula</h2>
+      <h2 id="quadratic-formula">Quadratic Formula</h2>
         <p>
-          For these examples, the <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html">quadratic formula</a> is simply applied to the expressions of the form $ax^2 + bx + c = 0$. An equation has no real solution if the value inside the square root (the determinant) is negative, has one solution if it's 0, and has two solutions otherwise (thanks to the plus-minus sign).
+          For these examples, the <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#polynomials">quadratic formula</a> is simply applied to the expressions of the form $ax^2 + bx + c = 0$. An equation has no real solution if the value inside the square root (the determinant) is negative, has one solution if it's 0, and has two solutions otherwise (thanks to the plus-minus sign).
         </p>
 
         <h3>Example "2"</h3>
@@ -112,7 +123,7 @@
           </p>
 
 
-      <h2>Radical Equations</h2>
+      <h2 id="radical">Radical Equations</h2>
         <p>
           These can be solved by squaring both sides of the equation, then solving the resulting polynomial. However, one must keep in mind the constraints given by the initial expression: square roots must take positive (or 0) values as input and return positive (or 0) values as output. These must be checked after solving the polynomial and invalid results discarded.
         </p>
@@ -148,7 +159,7 @@
           </p>
 
 
-      <h2>Absolute Value Equations</h2>
+      <h2 id="abs">Absolute Value Equations</h2>
         <p>
           For these equations, one must consider that absolute values have the same output whether its input is positive or negative. Therefore, one can remove the absolute value and consider two possible equations: one where the term with the absolute value is kept the same, and another where the input of the absolute value has its sign inverted.
         </p>
@@ -187,7 +198,7 @@
           </p>
 
 
-      <h2>Rational Equations</h2>
+      <h2 id="rational">Rational Equations</h2>
         <p>
           These equations can be solved by multiplying both sides by the same terms until no fractions are present, then solving for the resulting polynomial. One must keep in mind the constraints given by the original form of the equation: solutions that make a denominator be equal to 0 are to be excluded from the solution set.
         </p>
@@ -229,7 +240,7 @@
           </p>
 
 
-      <h2>Analyzing and Solving Polynomial Equations</h2>
+      <h2 id="analysis-polynomial">Analyzing and Solving Polynomial Equations</h2>
         <p>
           The number of complex roots of a polynomial is given by the highest exponential term. The possible number of real roots for a polynomial of degree $n$ is $0,2,4,...,n$ if $n$ is even or $1,3,5,...,n$ if $n$ is odd. The number of imaginary roots is just the number of complex roots minus the number of real roots. <br><br>
 
@@ -262,7 +273,7 @@
           </p>
 
 
-      <h2>Problems (Systems of Equations)</h2>
+      <h2 id="problems">Problems (Systems of Equations)</h2>
 
         <h3>Example "7"</h3>
           <p>
@@ -335,7 +346,7 @@
           </p>
 
 
-      <h2>Multistep Inequalities</h2>
+      <h2 id="inequalities-multistep">Multistep Inequalities</h2>
         <p>
           Inequalities can be, for the most part, treated and solved as equations. However, one must be very careful when multiplying both sides of the inequality with a negative number, as this reverts the inequality. For example, given $a < b$, if both sides are multiplied by $-1$, the inequality becomes $-a > -b$ (can also be written as $-b < -a$). <br><br>
 
@@ -387,7 +398,7 @@
           </figure>
 
 
-      <h2>Quadratic Inequalities</h2>
+      <h2 id="inequalities-quadratic">Quadratic Inequalities</h2>
         <p>
           When plotting an inequality such as $y > f(x)$ in a cartesian plane, first plot the line described by $y = f(x)$. Then, one can shade either the area above (if the inequality is $y > f(x)$) or below (if the inequality is $y < f(x)$) this line. The line $y = f(x)$ must be included if the inequality is $y >= f(x)$ or $y <= f(x)$, otherwise it should be excluded (usually represented with a dotted line).
         </p>
