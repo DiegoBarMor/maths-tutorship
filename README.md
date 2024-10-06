@@ -25,6 +25,6 @@
 - **Quadratic Inequalities**: 1, 4
 
 ## TD 2
-- **Domain, Co-domain, plot**: 1d, 1c, 1g
-- **Intersection of functions**: 2a
+- **Function Analysis**: 1d, 1c, 1g
+- **Intersection of Functions**: 2a
 - **Problems**: 3, 5
