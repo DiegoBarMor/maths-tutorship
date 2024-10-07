@@ -12,6 +12,9 @@
     <script type="text/javascript" async
       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
+    <style>
+      blockquote {margin-top: 25px; margin-bottom: 25px; margin-left: 100px; margin-right: 100px; background-color: #dddddd}
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -52,13 +55,13 @@
             It's known that $g(z) = ln(z)$ intersects with the x-axis at $z_0=1$ and that it has a vertical asymptote at $z^*=0$. Because $g(z)$ is the top-most function, these properties will also be reflected by $f(x)$. One just needs to find the respective values of $x_0$ and $x^*$ where they hold true, which can be achieved by solving $z(x)$ for $z_0$ and $z^*$ respectively.
 
             $$\begin{aligned}
-            z(x_0) &= z_0 \\
-            2x_0-1 &= 1 \\
-            x_0 &= 1 \\
-            \\
-            z(x^*) &= z^* \\
-            2x^*-1 &= 0 \\
-            x^* &= \frac{1}{2} \\
+              z(x_0) &= z_0 \\
+              2x_0-1 &= 1 \\
+              x_0 &= 1 \\
+              \\
+              z(x^*) &= z^* \\
+              2x^*-1 &= 0 \\
+              x^* &= \frac{1}{2} \\
             \end{aligned}$$
 
             Note that these points can also be obtained by considering $z(x)$ as a <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#manipulations">scaling and shifting</a> operation along the x-axis. This perspective also reveals that $f(x)$ is actually $g(z)$ shrunk by a factor of 2, which wasn't evident before. Knowing this information, one can plot $f(x)$ and find its domain and codomain ($g(z)$ is also shown as reference).
@@ -143,10 +146,246 @@
       <h2 id="problems">Problems</h2>
         <h3>Example "3"</h3>
           <p>
+            The problem is introduced as:
+
+            <blockquote>
+              In a chemical reaction, when reactants $A$ and $B$ are mixed, a species $E$ is produced. The amount of species produced depends on the amount of reactant $A$ according to the following law :
+              $q(A) = 2ln(3A+3)$ (...) $E$ depends on $B$ linearly with a proportionality constant of $\frac{1}{2}$.
+            </blockquote>
+
+            Knowing this, one can define $E$ as a function of $A$ and $B$, such as $E(A,B)$. For the sake of this example, it will be assumed that the body of $E(A,B)$ simply consists of a product between two terms $q(A)$ and $p(B)$. The body of these two can be taken directly from the quote.
+
+            $$\begin{aligned}
+              E(A,B) &= q(A)p(B) \\
+              &= (2ln(3A+3))(\frac{B}{2}) \\
+            \end{aligned}$$
+
+            Now the questions of the problem can be tackled.
+            <blockquote>
+              How much $E$ will be produced when $A = 1$?
+            </blockquote>
+
+            $$\begin{aligned}
+              E(1,B) &= (2ln(3(1)+3))(\frac{B}{2}) \\
+              &= 2ln(3+3) \frac{B}{2} \\
+              &= ln(6) B \\
+            \end{aligned}$$
+
+            <blockquote>
+              If we want to double the amount of $E$ produced, what amount of $A$ should be supplied?
+            </blockquote>
+
+            Given a fixed value for $A$ and $B$, let lowercase $a$ be the incognita amount required to double $E(A,B)$.
+
+            $$\begin{aligned}
+              E(a,B) &= 2E(A,B) \\
+              q(a)q(B) &= 2q(A)q(B) \\
+              ln(3a+3) &= 2ln(3A+3) \\
+              ln(3a+3) &= ln((3A+3)^2) \\
+              3a+3 &= 9A^2+18A+9 \\
+              a+1 &= 3A^2+6A+3 \\
+              a &= 3A^2+6A+2 \\
+            \end{aligned}$$
+
+            <blockquote>
+              Plot the curve of $E$ as a function of $B$.
+            </blockquote>
+
+            This is simply the plot for the <a href="https://en.wikipedia.org/wiki/Identity_function">identity function</a> scaled by a factor of $\frac{1}{2}$.
+
+            <blockquote>
+              If we want to double the amount of $E$, how should the amount of $B$ be changed?
+            </blockquote>
+
+            Given a fixed value for $A$ and $B$, let lowercase $b$ be the incognita amount required to double $E(A,B)$.
+
+            $$\begin{aligned}
+              E(A,b) &= 2E(A,B) \\
+              q(A)q(b) &= 2q(A)q(B) \\
+              \frac{b}{2} &= 2\frac{B}{2} \\
+              b &= 2B \\
+            \end{aligned}$$
           </p>
 
         <h3>Example "5"</h3>
           <p>
+            The problem is introduced as:
+
+            <blockquote>
+              Two fish populations inhabit the same lake. The population $p_1$ consists of predators that feed on the population $p_2$. The number of fish in each population fluctuates over time according to the predator-prey relationship in a cycle : when the population $p_1$ is low, the population $p_2$ increases, and when the population $p_2$ is large, the population $p_1$ also increases because there is more food ; when the population $p_1$ is large, the population $p_2$ decreases because there are too many predators, and when the population $p_2$ is low, the population $p_1$ decreases as well because there is not enough food. Thus, both populations have a sinusoidal pattern over time.
+            </blockquote>
+
+            It states that both $p_1$ and $p_2$ are sinusoidal functions of time, so they could be considered as some variation of $sin(t)$.
+
+            $$\begin{aligned}
+              p_1(t) &\sim sin(t) \\
+              p_2(t) &\sim sin(t) \\
+            \end{aligned}$$
+
+            <figure>
+              <img src="figures/td2-5_0.png" alt="figures/td2-5_0.png">
+            </figure>
+
+            The body of the functions must be improved using further details from the problem, by making use of <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#manipulations">function manipulation</a> techniques.
+
+            <blockquote>
+              The duration of one cycle is 2 months, and there is a phase of 15 days between the phases of the two populations. (...) initially, the population $p_1$ is half that of the population $p_2$.
+            </blockquote>
+
+            The first statement hints at a scaling operation over the x-axis: the usual periodicity of $2\pi$ should be converted into $60$ (2 months), by plugging some factor $k$ into $sin(kx)$. Introducing $k=2\pi$ <i>shrinks</i> the periodicity into a value of $\frac{2\pi}{k}=\frac{2\pi}{2\pi}=1$. To <i>extend</i> the periodicity into $60$, $k$ must be further divided by this value. Hence, $k=\frac{2\pi}{60}=\frac{\pi}{30}$.
+
+            $$\begin{aligned}
+              p_1(t) &\sim sin(\frac{\pi}{30} t) \\
+              p_2(t) &\sim sin(\frac{\pi}{30} t) \\
+            \end{aligned}$$
+
+            <figure>
+              <img src="figures/td2-5_1.png" alt="figures/td2-5_1.png">
+            </figure>
+
+            Now, one of the two functions must be shifted horizontally $15$ units, by adding or substracting a factor $c$. Note that $c$ must also be multiplied by $k$, so $c=15k=15\frac{\pi}{30}=\frac{\pi}{2}$. It is stated that $p_1 < p_2$ at $t=0$; one approach is to shift $p_2$ by $15k$ to the left, in order for to shift its previous peak at $t=\frac{k}{2\pi}$ into the new position $t=0$.
+
+            $$\begin{aligned}
+              p_1(t) &\sim sin(\frac{\pi}{30} t) \\
+              p_2(t) &\sim sin(\frac{\pi}{30} t + \frac{\pi}{2}) \\
+            \end{aligned}$$
+
+            <figure>
+              <img src="figures/td2-5_2.png" alt="figures/td2-5_2.png">
+            </figure>
+
+            <blockquote>
+              (...) knowing that the variation in the prey population is twice as large as that for the predators, (...)
+            </blockquote>
+
+            The final manipulation directly stated by the problem consists of performing a scaling operation over the y-axis of one of the funtions, by a factor of $2$ (or $\frac{1}{2}$). The intuitive choice is the former.
+
+            $$\begin{aligned}
+              p_1(t) &\sim sin(\frac{\pi}{30} t) \\
+              p_2(t) &\sim 2sin(\frac{\pi}{30} t + \frac{\pi}{2}) \\
+            \end{aligned}$$
+
+            <figure>
+              <img src="figures/td2-5_3.png" alt="figures/td2-5_3.png">
+            </figure>
+
+            Right now, the populations become sometimes negative, which doesn't make physical sense. This can be fixed by shifting both up over the y-axis by some arbitrary amount. Let $b$ be the "base population" of both species, and $a$ the base variation of $p_1$.
+
+            $$\begin{aligned}
+              p_1(t) &= b + a * sin(\frac{\pi}{30} t) \\
+              p_2(t) &= b + 2a * sin(\frac{\pi}{30} t + \frac{\pi}{2}) \\
+            \end{aligned}$$
+
+            The fact that $p_2 = 2p_1$ at $t=0$ allows to find a relationship between $a$ and $b$.
+
+            $$\begin{aligned}
+              p_2(0) &= 2p_1(0) \\
+              (b + 2a*sin(\frac{\pi}{2})) &= 2(b + a*sin(0)) \\
+              (b + 2a*1) &= 2(b + a*0) \\
+              b + 2a &= 2b \\
+              b &= 2a \\
+            \end{aligned}$$
+
+            For this example, $a$ and $b$ can be set to an arbitrary number, as long as $b = 2a$ holds.
+
+            <blockquote>
+              Plot the behavior of both populations on a graph, (...)
+            </blockquote>
+
+            <figure>
+              <img src="figures/td2-5_4.png" alt="figures/td2-5_4.png">
+            </figure>
+
+            <blockquote>
+              At what point in the cycle are the two populations equal?
+            </blockquote>
+
+            The plot shows that $p_1$ and $p_2$ intersect around $t \approx 10.5+30n$ for $n \in \mathbb{N}$. One can solve $p_1(t) = p_2(t)$ for a precise answer.
+
+            $$\begin{aligned}
+              p_1(t) &= p_2(t) \\
+              b + a * sin(\frac{\pi}{30} t) &= b + 2a * sin(\frac{\pi}{30} t + \frac{\pi}{2}) \\
+              sin(\frac{\pi}{30} t) &= 2sin(\frac{\pi}{30} t + \frac{\pi}{2}) \\
+              sin(\frac{\pi}{30} t) &= 2cos(\frac{\pi}{30} t) \\
+              tan(\frac{\pi}{30} t) &= 2 \\
+              \frac{\pi}{30} t &= arctan(2) + n\pi \\
+              t &= \frac{30}{\pi}(arctan(2) + n\pi) \\
+              t &= \frac{30}{\pi}arctan(2) + 30n \\
+            \end{aligned}$$
+
+            And indeed $t = \frac{30}{\pi}arctan(2) + 30n \approx 10.572 + 30n$.
+
+            <blockquote>
+              When the prey population is at its maximum, what is the population of predators?
+            </blockquote>
+
+            The plot immediatly reveals that $p_2(t)$ has maxima at $t = 60n$ and that $p_1(60n) = b$. This can be confirmed by finding the $argmax$ of $p_2(t)$, given the known value of $argmax(sin) = 2\pi n + \frac{\pi}{2}$. Note that the $argmax$ is affected by function manipulations along the x-axis and unaffected by those along the y-axis. The former must be "undone" while the latter can be ignored.
+
+            $$\begin{aligned}
+              argmax(p_2(t)) &= argmax(b + 2a * sin(\frac{\pi}{30} t + \frac{\pi}{2})) && \\
+              &= argmax(sin(\frac{\pi}{30} t + \frac{\pi}{2})) && \text{ignore y-axis manipulations} \\
+              &= \frac{30}{\pi}(argmax(sin(t)) - \frac{\pi}{2}) && \text{"undo" x-axis manipulations} \\
+              &= \frac{30}{\pi}(2\pi n + \frac{\pi}{2} - \frac{\pi}{2}) && \text{replace known argmax(sin)} \\
+              &= \frac{30}{\pi}2\pi n && \\
+              &= 60n && \\
+              \\
+              p_1(60n) &= b + a * sin(\frac{\pi}{30} 60n) && \\
+              &= b + a * sin(2\pi n) && \\
+              &= b && \\
+            \end{aligned}$$
+
+            <blockquote>
+              How does it change at that moment?
+            </blockquote>
+
+            The plot makes evident that $p_1(t)$ increases at $t = 60n$. The derivative $p_1'(t) = \frac{d}{dt} p_1(t)$ indicates how much.
+
+            $$\begin{aligned}
+              p_1'(t) &= \frac{d}{dt} [b + a * sin(\frac{\pi}{30} t)] \\
+              &= a*cos(\frac{\pi}{30} t) \frac{d}{dt} [\frac{\pi}{30} t] \\
+              &= \frac{a \pi}{30} cos(\frac{\pi}{30} t) \\
+              \\
+              p_1'(60n) &= \frac{a \pi}{30} cos(\frac{\pi}{30} 60n) \\
+              &= \frac{a \pi}{30} cos(2\pi n) \\
+              &= \frac{a \pi}{30} \\
+            \end{aligned}$$
+
+            <blockquote>
+              And when the predator population is at its maximum, what is the population of prey?
+            </blockquote>
+
+            Again, the plot reveals that $p_1(t)$ has maxima at $t = 60n + 15$ and that $p_2(60n + 15) = b$ too. This can be confirmed by finding the $argmax$ of $p_1(t)$ in a similar manner as before.
+
+            $$\begin{aligned}
+              argmax(p_1(t)) &= argmax(b + a * sin(\frac{\pi}{30} t)) && \\
+              &= argmax(sin(\frac{\pi}{30} t)) && \text{ignore y-axis manipulations} \\
+              &= \frac{30}{\pi}(argmax(sin(t))) && \text{"undo" x-axis manipulations} \\
+              &= \frac{30}{\pi}(2\pi n + \frac{\pi}{2}) && \text{replace known argmax(sin)} \\
+              &= 60n + 15 && \\
+              \\
+              p_2(60n + 15) &= b + 2a * sin(\frac{\pi}{30} (60n + 15) + \frac{\pi}{2}) && \\
+              &= b + 2a * sin(2\pi n + \frac{\pi}{2} + \frac{\pi}{2}) && \\
+              &= b + 2a * sin(2\pi n + \pi) && \\
+              &= b && \\
+            \end{aligned}$$
+
+            <blockquote>
+              How does it change at that moment?
+            </blockquote>
+
+            The plot makes evident that $p_2(t)$ decreases at $t = 60n + 15$. The derivative $p_2'(t) = \frac{d}{dt} p_2(t)$ indicates how much.
+
+            $$\begin{aligned}
+              p_2'(t) &= \frac{d}{dt} [b + 2a * sin(\frac{\pi}{30} t + \frac{\pi}{2})] \\
+              &= \frac{d}{dt} [b + 2a * cos(\frac{\pi}{30} t)] \\
+              &= -2a*sin(\frac{\pi}{30} t) \frac{d}{dt} [\frac{\pi}{30} t] \\
+              &= -\frac{a \pi}{15} sin(\frac{\pi}{30} t) \\
+              \\
+              p_2'(60n + 15) &= -\frac{a \pi}{15} sin(\frac{\pi}{30} (60n + 15)) \\
+              &= -\frac{a \pi}{15} sin(2\pi n + \frac{\pi}{2}) \\
+              &= -\frac{a \pi}{15} cos(2\pi n) \\
+              &= -\frac{a \pi}{15} \\
+            \end{aligned}$$
           </p>
 
 
