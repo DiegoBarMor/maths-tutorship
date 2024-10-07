@@ -31,6 +31,7 @@
           <li><a class="btn" href="#exponents">Exponents and Logarithms</a></li>
           <li><a class="btn" href="#trigonometrics">Trigonometric Formulas</a></li>
           <li><a class="btn" href="#manipulations">Function Manipulations</a></li>
+          <li><a class="btn" href="#limits-derivatives">Limits and Derivatives</a></li>
         </ul>
 
       <h2 id="polynomials">Polynomials</h2>
@@ -130,9 +131,10 @@
               cos(\theta) &= sin(\frac{\pi}{2} - \theta) \\
             \end{aligned}$$
 
-            <b>Pythagorean Identity</b>
+            <b>Other Identities</b>
             $$\begin{aligned}
-              sin^2(\theta) + cos^2(\theta) &= 1 \\
+              & sin^2(\theta) + cos^2(\theta) = 1 \\
+              & sin(\alpha + \beta) = sin(\alpha)cos(\beta) + cos(\alpha)sin(\beta) \\
             \end{aligned}$$
           </p>
 
@@ -225,6 +227,101 @@
               <img src="animations/cs-scale_x.gif" alt="animations/cs-scale_x.gif">
             </figure>
           </p>
+
+
+      <h2 id="limits-derivatives">Limits and Derivatives</h2>
+        <h3>Speed of Growing Functions</h3>
+          <p>
+            $$\begin{aligned}
+              \lim_{x\to\infty} f(x) = \infty && \lim_{x\to\infty} g(x) = \infty \\
+            \end{aligned}$$
+
+            $$\begin{aligned}
+              \lim_{x\to\infty} \frac{f(x)}{g(x)} &= \infty && \text{when f(x) grows faster than g(x)} \\
+              \lim_{x\to\infty} \frac{f(x)}{g(x)} &= 0      && \text{when f(x) grows slower than g(x)} \\
+              \lim_{x\to\infty} \frac{f(x)}{g(x)} &= L      && \text{when f(x) grows at the same speed as g(x)} \\
+            \end{aligned}$$
+
+            At a given point $x$ where the functions grow: $e^{x^n} > e^x > x^n > x^\frac{1}{n} > ln(x)$ for $n \in \mathbb{N}$ (higher values imply a faster growth)
+          </p>
+
+        <h3>Speed of Decaying Functions</h3>
+          <p>
+            $$\begin{aligned}
+              \lim_{x\to\infty} f(x) = 0 && \lim_{x\to\infty} g(x) = 0 \\
+            \end{aligned}$$
+
+            $$\begin{aligned}
+              \lim_{x\to\infty} \frac{f(x)}{g(x)} &= 0      && \text{when f(x) decays faster than g(x)} \\
+              \lim_{x\to\infty} \frac{f(x)}{g(x)} &= \infty && \text{when f(x) decays slower than g(x)} \\
+              \lim_{x\to\infty} \frac{f(x)}{g(x)} &= L      && \text{when f(x) decays at the same speed as g(x)} \\
+            \end{aligned}$$
+
+            At a given point $x$ where the functions decay: $e^{-x^n} < e^{-x} < x^{-n} < x^{-\frac{1}{n}} < ln(x)^{-1}$ for $n \in \mathbb{N}$ (lower values imply a faster decay)
+          </p>
+
+        <h3>Equivalent Functions at their Limit</h3>
+          <p>
+            $$\begin{aligned}
+              x &\to \infty \\
+              x^a + x^b &\sim x^a, a > b \\
+              e^{ax} + e^{bx} &\sim e^{ax}, a > b \\
+              ln(x^a) + ln(x^b) &\sim ln(x^a), a > b \\
+              \\
+              x &\to 0 \\
+              e^x - 1 &\sim x \\
+              ln(1 + x) &\sim x \\
+              sin(x) &\sim x \\
+              cos(x) - 1 &\sim -\frac{1}{2} x^2 \\
+              tan(x) &\sim x \\
+            \end{aligned}$$
+          </p>
+
+        <h3>Derivatives</h3>
+          <h4>Definition</h4>
+            <p>
+              $$\begin{aligned}
+                f'(x) &= \lim_{\Delta x \to 0} \frac{\Delta f(x)}{\Delta x} \\
+                &= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+              \end{aligned}$$
+            </p>
+
+          <h4>Derivatives Algebra</h4>
+            <p>
+              $$\begin{aligned}
+                (kf(x))' &= kf'(x) && \text{ for } k \text{ constant, independent of } x \\
+                (f(x) + g(x))' &= f'(x) + g'(x) && \\
+                (f(x) g(x))' &= f'(x)g(x) + f(x)g'(x) \\
+                (\frac{f(x)}{g(x)})' &= \frac{f'(x)g(x) - f(x)g'(x)}{g^2(x)} \\
+                f(g(x))' &= f'(g(x))g'(x) \\
+                (f^{-1}(x))' &= \frac{1}{f'(f^{-1}(x))}
+              \end{aligned}$$
+            </p>
+
+          <h4>Basic Derivatives</h4>
+              <p>
+                $$\begin{aligned}
+                  (k)' &= 0 \\
+                  (x^n)' &= nx^{n-1} \\
+                  (a^x)' &= a^xln(a) \\
+                  (e^x)' &= e^x \\
+                  (ln(x))' &= \frac{1}{x} \\
+                  (log_a(x))' &= \frac{1}{xln(a)} \\
+                  (sin(x))' &= cos(x) \\
+                  (cos(x))' &= -sin(x) \\
+                  (tan(x))' &= \frac{1}{cos^2(x)} \\
+                  (arcsin(x))' &= \frac{1}{\sqrt{1 - x^2}} \\
+                  (arccos(x))' &= \frac{1}{-\sqrt{1 - x^2}} \\
+                  (arctan(x))' &= \frac{1}{\sqrt{1 + x^2}} \\
+                \end{aligned}$$
+              </p>
+
+        <h3>L'Hôpital's rule</h3>
+            <p>
+              $$\begin{aligned}
+                \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)} \\
+              \end{aligned}$$
+            </p>
 
 
     </div>
