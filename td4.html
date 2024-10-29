@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mathematics Tutorship</title>
+    <link rel="stylesheet" type="text/css" href=style.css>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script type = "text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <style>
+      blockquote {margin-top: 25px; margin-bottom: 25px; margin-left: 100px; margin-right: 100px; background-color: #dddddd}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="line">
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/index.html">Index</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html">Cheatsheet</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td1.html">TD 1</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td2.html">TD 2</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td3.html">TD 3</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td4.html">TD 4</a>
+      </div>
+    </nav>
+
+    <div class="contents"> <h1>TD 4</h1>
+      <h2>Index</h2>
+        <ul>
+          <li><a class="btn" href="#analysis">Function Analysis</a></li>
+          <li><a class="btn" href="#problems">Problems</a></li>
+        </ul>
+
+
+      <h2 id="analysis">Function Analysis</h2>
+        <h3>Exercise 1</h3>
+          <p>
+            <table class="tg scrollable"><thead>
+              <tr>
+                <th class="tg-0pky">$f(x)$</th>
+                <th class="tg-0pky">Domain</th>
+                <th class="tg-0pky">Asymptotes</th>
+                <th class="tg-0pky">Limits at Boundaries</th>
+                <th class="tg-0pky">Axes Intercepts</th>
+                <th class="tg-0pky">Increasing-Decreasing Intervals</th>
+                <th class="tg-0pky">Concave-Convex Intervals</th>
+                <th class="tg-0pky">Maximum-Minimum Points</th>
+                <th class="tg-0pky">Inflection Points</th>
+                <th class="tg-0pky">Plot</th>
+              </tr></thead>
+            <tbody>
+              <tr> <!-- $x^4-18x^2+56$ -->
+                <td class="tg-0pky">$$x^4-18x^2+56$$</td>
+                <td class="tg-0pky"> <!-- Domain -->
+                  $$\begin{aligned}
+                    y &= f(x) \\
+                    \mathbf{X} &\longrightarrow \mathbf{Y} \\
+                    \mathbf{X} &= (-\infty, +\infty) \\
+                    \mathbf{X} &= \mathbb{R} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Asymptotes -->
+                  <ul>
+                    <li>
+                      Given $x^*$ a finite boundary of $f(x)$, <br>
+                      a vertical asymptote is present at <br>
+                      $x_a=x^*$ when $\lim_{x \to x*}f(x) = \infty$
+                    </li>
+                    <li>
+                      A horizontal asymptote is present at <br>
+                      $y_a$ when $\lim_{x \to \infty} = y_a \not= \infty$
+                    </li>
+                  </ul>
+                  $$\begin{aligned}
+                    x_a &\in \{\} \text{ because } x^* \in \{\} \\
+                    && \\
+                    y_a &\in \{\} \text{ as found in "Limits at Boundaries"} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Limits at Boundaries -->
+                  $$\begin{aligned}
+                    &\lim_{x \to -\infty} x^4-18x^2+56 \\
+                    \sim &\lim_{x \to -\infty} x^4 \\
+                    = &+\infty \\
+                    && \\
+                    &\lim_{x \to +\infty} x^4-18x^2+56 \\
+                    \sim &\lim_{x \to +\infty} x^4 \\
+                    = & +\infty \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Axes Intercepts -->
+                  $$\begin{aligned}
+                    f(x) &= (x^2-4)(x^2-14) \\
+                    &= (x+\sqrt{14})(x-\sqrt{14})(x+2)(x-2) \\
+                    x_0 &\in \{-\sqrt{14}, -2, 2, \sqrt{14}\} \\
+                    &\approx \{-3.74, -2, 2, 3.74\} \\
+                    && \\
+                    y_0 &= f(0) = 56 \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Increasing-Decreasing Intervals -->
+                  $$\begin{aligned}
+                    f'(x) &= 4x^3-36x \\
+                    &= 4x(x^2-9) \\
+                    &= 4x(x-3)(x+3) \\
+                    x'_0 &\in \{-3, 0, 3\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f'(x) < 0, && x &\in (-\infty,-3) && (-)\\
+                    f'(x) > 0, && x &\in (-3,0) && (+) \\
+                    f'(x) < 0, && x &\in (0,3) && (-) \\
+                    f'(x) > 0, && x &\in (3, +\infty) && (+) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Concave-Convex Intervals -->
+                  $$\begin{aligned}
+                    f''(x) &= 12x^2 - 36\\
+                    &= 12(x^2-3) \\
+                    &= 12(x-\sqrt{3})(x+\sqrt{3}) \\
+                    x''_0 &\in \{-\sqrt{3}, \sqrt{3}\} \\
+                    &\approx \{-1.73, 1.73\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f''(x) > 0, && x &\in (-\infty,-\sqrt{3}) && (\cup)\\
+                    f''(x) < 0, && x &\in (-\sqrt{3},\sqrt{3}) && (\cap) \\
+                    f''(x) > 0, && x &\in (\sqrt{3}, +\infty) && (\cup) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Maximum-Minimum Points -->
+                  $$\begin{aligned}
+                    x'_0 &\in \{-3, 0, 3\} && \\
+                    f''(-3) &= 12(-3)^2 - 36 > 0 &\Rightarrow min \\
+                    f''( 0) &= 12( 0)^2 - 36 < 0 &\Rightarrow max \\
+                    f''( 3) &= 12( 3)^2 - 36 > 0 &\Rightarrow min \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Inflection Points -->
+                  $$\begin{aligned}
+                    x''_0 &\in \{-\sqrt{3}, \sqrt{3}\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Plot -->
+                  <figure>
+                    <img class="img-small" src="figures/td4-1a.png" alt="figures/td4-1a.png">
+                  </figure>
+                </td>
+              </tr>
+              <tr> <!-- $\frac{2x-x^2}{x^2-2x+1}$ -->
+                <td class="tg-0pky">$$\frac{2x-x^2}{x^2-2x+1}$$</td>
+                <td class="tg-0pky"> <!-- Domain -->
+                  $$\begin{aligned}
+                    f(x) &= \frac{g(x)}{h(x)} \\
+                    h(x) &= x^2-2x+1 \\
+                    &= (x-1)^2 \\
+                    x^* &\in \{1\} \\
+                    && \\
+                    \mathbf{X} &= (-\infty,1) \cup (1,+\infty) \\
+                    \mathbf{X} &= \mathbb{R} \backslash \{1\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Asymptotes -->
+                  $$\begin{aligned}
+                    x^* &\in \{1\} \\
+                    &\lim_{x \to 1} \frac{2x-x^2}{x^2-2x+1} = \frac{1}{0} \to \infty \\
+                    && \\
+                    x_a &\in \{1\} \\
+                    && \\
+                    y_a &\in \{-1\} \text{ as found in "Limits at Boundaries"} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Limits at Boundaries -->
+                  $$\begin{aligned}
+                    &\lim_{x \to -\infty} \frac{2x-x^2}{x^2-2x+1} \\
+                    = &\lim_{x \to -\infty} \frac{\frac{2}{x}-1}{1-\frac{2}{x}+\frac{1}{x^2}} \\
+                    = &-1
+                    && \\
+                    &\lim_{x \to +\infty} \frac{2x-x^2}{x^2-2x+1} \\
+                    = &\lim_{x \to +\infty} \frac{\frac{2}{x}-1}{1-\frac{2}{x}+\frac{1}{x^2}} \\
+                    = &-1
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Axes Intercepts -->
+                  $$\begin{aligned}
+                    g(x) &= 2x-x^2 \\
+                    &= x(2-x) \\
+                    x_0 &\in \{0,2\} \\
+                    && \\
+                    y_0 &= f(0) \\
+                    &= \frac{2(0)-(0)^2}{(0)^2-2(0)+1} \\
+                    &= 0
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Increasing-Decreasing Intervals -->
+                  $$\begin{aligned}
+                    f'(x) &= \frac{(2-2x)(x^2-2x+1) - (2x-x^2)(2x-2)}{(x^2-2x+1)^2} \\
+                    &= \frac{-2 ((x-1)(x^2-2x+1) + (x-1)(2x-x^2))}{(x-1)^4} \\
+                    &= \frac{-2 (x^2-2x+1 + 2x-x^2)}{(x-1)^3} \\
+                    &=-\frac{2}{(x-1)^3} = -2(x-1)^{-3} \\
+                    &\qquad x'_0 \in \{\} \qquad x'^* \in \{1\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f'(x) > 0, && x &\in (-\infty,1) && (+) \\
+                    f'(x) < 0, && x &\in (1,+\infty) && (-) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Concave-Convex Intervals -->
+                  $$\begin{aligned}
+                    f''(x) &= 6(x-1)^{-4} \\
+                    x''_0 &\in \{\} \qquad x''^* \in \{1\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f''(x) > 0, && x &\in (-\infty,1)  && (\cup) \\
+                    f''(x) > 0, && x &\in (1,+\infty)  && (\cup) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Maximum-Minimum Points -->
+                  $$\begin{aligned}
+                    x'_0 &\in \{\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Inflection Points -->
+                  $$\begin{aligned}
+                    x''_0 &\in \{\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Plot -->
+                  <figure>
+                    <img class="img-small" src="figures/td4-1b.png" alt="figures/td4-1b.png">
+                  </figure>
+                </td>
+              </tr>
+              <tr> <!-- $\frac{2x^2+3x+1}{x^2-1}$ -->
+                <td class="tg-0pky">$$\frac{2x^2+3x+1}{x^2-1}$$</td>
+                <td class="tg-0pky"> <!-- Domain -->
+                  $$\begin{aligned}
+                    f(x) &= \frac{g(x)}{h(x)} \\
+                    h(x) &= x^2-1 \\
+                    &= (x+1)(x-1) \\
+                    x^* &\in \{-1,1\} \\
+                    && \\
+                    \mathbf{X} &= \mathbb{R} \backslash \{-1,1\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Asymptotes -->
+                  $$\begin{aligned}
+                    x^* &\in \{-1,1\} \\
+                    &\lim_{x \to -1} \frac{2x^2+3x+1}{x^2-1} \\
+                    = &\lim_{x \to -1} \frac{(x+1)(2x+1)}{(x+1)(x-1)} \\
+                    = &\lim_{x \to -1} \frac{2x+1}{x-1} = \frac{1}{2}\\
+                    && \\
+                    &\lim_{x \to 1} \frac{2x^2+3x+1}{x^2-1} = \frac{6}{0} \to \infty \\
+                    && \\
+                    x_a &\in \{1\} \\
+                    && \\
+                    y_a &\in \{2\} \text{ as found in "Limits at Boundaries"} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Limits at Boundaries -->
+                  $$\begin{aligned}
+                    &\lim_{x \to -\infty} \frac{2x^2+3x+1}{x^2-1} \\
+                    = &\lim_{x \to -\infty} \frac{2+\frac{3}{x}+\frac{1}{x^2}}{1-\frac{1}{x^2}} \\
+                    = &2 \\
+                    && \\
+                    &\lim_{x \to +\infty} \frac{2x^2+3x+1}{x^2-1} \\
+                    = &\lim_{x \to -\infty} \frac{2+\frac{3}{x}+\frac{1}{x^2}}{1-\frac{1}{x^2}} \\
+                    = &2 \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Axes Intercepts -->
+                  $$\begin{aligned}
+                    g(x) &= 2x^2+3x+1 \\
+                    &= (x+1)(2x+1) \\
+                    x_0 &\in \{-\frac{1}{2}\} \\
+                    && \\
+                    y_0 &= f(0) \\
+                    &= \frac{2(0)^2+3(0)+1}{(0)^2-1} \\
+                    &= -1 \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Increasing-Decreasing Intervals -->
+                  $$\begin{aligned}
+                    f'(x) &= \frac{(4x+3)(x^2-1)-(2x^2+3x+1)(2x)}{(x^2-1)^2} \\
+                    &= \frac{4x^3-4x+3x^2-3-4x^3-6x^2-2x}{(x+1)^2(x-1)^2} \\
+                    &= \frac{-3x^2-6x-3}{(x+1)^2(x-1)^2} \\
+                    &= \frac{-3(x+1)^2}{(x+1)^2(x-1)^2} \\
+                    &= \frac{-3}{(x-1)^2} = -3(x-1)^{-2} \\
+                    &\qquad x'_0 \in \{\} \qquad x'^* \in \{1\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f'(x) < 0, && x &\in (-\infty,1) && (-) \\
+                    f'(x) < 0, && x &\in (1,+\infty) && (-) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Concave-Convex Intervals -->
+                  $$\begin{aligned}
+                    f''(x) &= 6(x-1)^{-3} \\
+                    x''_0 &\in \{\} \qquad x''^* \in \{1\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f''(x) < 0, && x &\in (-\infty,1)  && (\cap) \\
+                    f''(x) > 0, && x &\in (1,+\infty)  && (\cup) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Maximum-Minimum Points -->
+                  $$\begin{aligned}
+                    x'_0 &\in \{\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Inflection Points -->
+                  $$\begin{aligned}
+                    x''_0 &\in \{\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Plot -->
+                  <figure>
+                    <img class="img-small" src="figures/td4-1c.png" alt="figures/td4-1c.png">
+                  </figure>
+                </td>
+              </tr>
+              <tr> <!-- $\sqrt{x^2-2x-5}$ -->
+                <td class="tg-0pky">$$\sqrt{x^2-2x-5}$$</td>
+                <td class="tg-0pky"> <!-- Domain -->
+                  $$\begin{aligned}
+                    f(x) &= \sqrt{g(x)}, \quad g(x) \geq 0 \\
+                    g(x) &= x^2-2x-5 = x^2-2x+1-6 \\
+                    &= (x-1+\sqrt{6})(x-1-\sqrt{6}) \\
+                    g''(x) &= 2 > 0 \quad (\cup) \\
+                    &\therefore g(x) > 0, x \in (-\infty, 1-\sqrt{6}) \cup (1+\sqrt{6}, +\infty) \\
+                    && \\
+                    \mathbf{X} &= (-\infty, 1-\sqrt{6}) \cup (1+\sqrt{6}, +\infty) \\
+                    & \approx (-\infty, -1.45) \cup (3.45, +\infty) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Asymptotes -->
+                  $$\begin{aligned}
+                    &\lim_{x \to 1 \pm \sqrt{6}} \sqrt{x^2-2x-5} = 0 \\
+                    \\
+                    x_a &\in \{\} \\
+                    && \\
+                    y_a &\in \{\} \text{ as found in "Limits at Boundaries"} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Limits at Boundaries -->
+                  $$\begin{aligned}
+                    &\lim_{x \to -\infty} \sqrt{x^2-2x-5} \\
+                    \sim &\lim_{x \to -\infty} \sqrt{x^2} \\
+                    = &+\infty \\
+                    && \\
+                    &\lim_{x \to +\infty} \sqrt{x^2-2x-5} \\
+                    \sim &\lim_{x \to +\infty} \sqrt{x^2} \\
+                    = &+\infty \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Axes Intercepts -->
+                  $$\begin{aligned}
+                    \sqrt{g_0} &= 0, \quad g_0 = 0 \\
+                    g(x) &= x^2-2x-5 = 0 \\
+                    &= (x-1+\sqrt{6})(x-1-\sqrt{6}) = 0 \\
+                    x_0 &\in \{1-\sqrt{6}, 1+\sqrt{6}\} \\
+                    && \\
+                    y_0 &= f(0) \\
+                    0 &\not \in \mathbf{X} \\
+                    &\therefore \text{ no intercept } y_0 \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Increasing-Decreasing Intervals -->
+                  $$\begin{aligned}
+                    f'(x) &= \frac{1}{2} (x^2-2x-5)^{-\frac{1}{2}} (2x-2) \\
+                    &= (x-1)(x^2-2x-5)^{-\frac{1}{2}} \\
+                    &\qquad x'_0 \in \{\} \qquad x'^* \in \{1-\sqrt{6}, 1+\sqrt{6}\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f'(x) < 0, && x &\in (-\infty, 1-\sqrt{6}) && (-) \\
+                    f'(x) > 0, && x &\in (1+\sqrt{6}, +\infty) && (+) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Concave-Convex Intervals -->
+                  $$\begin{aligned}
+                    f''(x) &= (1)(x^2-2x-5)^{-\frac{1}{2}} + (x-1)(-\frac{1}{2})(x^2-2x-5)^{-\frac{3}{2}}(2x-2) \\
+                    &= (x^2-2x-5)^{-\frac{1}{2}} -(x-1)^2(x^2-2x-5)^{-\frac{3}{2}} \\
+                    &= \frac{x^2-2x-5}{(x^2-2x-5)^{\frac{3}{2}}} -\frac{x^2-2x+1}{(x^2-2x-5)^{\frac{3}{2}}} \\
+                    &= -\frac{6}{(x^2-2x-5)^{\frac{3}{2}}} \\
+                    &\qquad x'_0 \in \{\} \qquad x'^* \in \{1-\sqrt{6}, 1+\sqrt{6}\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f''(x) < 0, && x &\in (-\infty, 1-\sqrt{6}) && (\cap) \\
+                    f''(x) < 0, && x &\in (1+\sqrt{6}, +\infty) && (\cap) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Maximum-Minimum Points -->
+                  $$\begin{aligned}
+                    x'_0 &\in \{\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Inflection Points -->
+                  $$\begin{aligned}
+                    x''_0 &\in \{\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Plot -->
+                  <figure>
+                    <img class="img-small" src="figures/td4-1d.png" alt="figures/td4-1d.png">
+                  </figure>
+                </td>
+              </tr>
+              <tr> <!-- $ln(4x+3)$ -->
+                <td class="tg-0pky">$$ln(4x+3)$$</td>
+                <td class="tg-0pky"> <!-- Domain -->
+                  $$\begin{aligned}
+                    f(x) &= ln(g(x)), \quad g(x) > 0 \\
+                    g(x) &= 4x+3 > 0 \\
+                    x &> -\frac{3}{4} \\
+                    && \\
+                    \mathbf{X} &= (-\frac{3}{4}, +\infty) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Asymptotes -->
+                  $$\begin{aligned}
+
+                    x_a &\in \{-\frac{3}{4}\} \text{ as found in "Limits at Boundaries"} \\
+                    && \\
+                    y_a &\in \{\} \text{ as found in "Limits at Boundaries"} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Limits at Boundaries -->
+                  $$\begin{aligned}
+                    &\lim_{x \to -\frac{3}{4}} ln(4x+3) \\
+                    = &-\infty \\
+                    && \\
+                    &\lim_{x \to +\infty} ln(4x+3) \\
+                    = &+\infty \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Axes Intercepts -->
+                  $$\begin{aligned}
+                    ln(g_0) &= 0, \quad g_0 = 1 \\
+                    g(x) &= 4x + 3 = 1 \\
+                    x_0 &\in \{-\frac{1}{2}\} \\
+                    && \\
+                    y_0 &= f(0) \\
+                    &= ln(4(0)+3) \\
+                    &= ln(3) \approx 1.098 \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Increasing-Decreasing Intervals -->
+                  $$\begin{aligned}
+                    f'(x) &= \frac{4}{4x+3} = 4(4x+3)^{-1} \\
+                    &\qquad x'_0 \in \{\} \qquad x'^* \in \{-\frac{3}{4}\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f'(x) > 0, && x &\in (-\frac{3}{4}, +\infty) && (+) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Concave-Convex Intervals -->
+                  $$\begin{aligned}
+                    f''(x) &= -4(4x+3)^{-2}(4) \\
+                    &= -16(4x+3)^{-2} \\
+                    &\qquad x''_0 \in \{\} \qquad x''^* \in \{-\frac{3}{4}\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f''(x) < 0, && x &\in (-\frac{3}{4}, +\infty) && (\cap) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Maximum-Minimum Points -->
+                  $$\begin{aligned}
+                    x'_0 &\in \{\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Inflection Points -->
+                  $$\begin{aligned}
+                    x''_0 &\in \{\} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Plot -->
+                  <figure>
+                    <img class="img-small" src="figures/td4-1e.png" alt="figures/td4-1e.png">
+                  </figure>
+                </td>
+              </tr>
+              <tr> <!-- $e^{2x}-3e^x+2$ -->
+                <td class="tg-0pky">$$e^{2x}-3e^x+2$$</td>
+                <td class="tg-0pky"> <!-- Domain -->
+                  $$\begin{aligned}
+                    f(x) &= g^2(x)-3g(x)+2 \\
+                    g(x) &= e^x \\
+                    \mathbf{X} &= \mathbb{R} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Asymptotes -->
+                  $$\begin{aligned}
+                    x_a &\in \{\} \text{ because } x^* \in \{\} \\
+                    && \\
+                    y_a &\in \{2\} \text{ as found in "Limits at Boundaries"} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Limits at Boundaries -->
+                  $$\begin{aligned}
+                    &\lim_{x \to -\infty} e^{2x}-3e^x+2 \\
+                    = &(0)-(0)+2 \\
+                    = &2 \\
+                    && \\
+                    &\lim_{x \to +\infty} e^{2x}-3e^x+2 \\
+                    \sim &\lim_{x \to -\infty} e^{2x} \\
+                    = &+\infty \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Axes Intercepts -->
+                  $$\begin{aligned}
+                    f(x) &= (e^x)^2-3e^x+2 \\
+                    &= (e^x-2)(e^x-1) \\
+                    x_0 &\in \{0, ln(2)\} \\
+                    &\approx \{0, 0.693\} \\
+                    && \\
+                    y_0 &= f(0) \\
+                    &= e^{2(0)}-3e^{(0)}+2 \\
+                    &= (1)-3(1)+2 \\
+                    &= 0 \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Increasing-Decreasing Intervals -->
+                  $$\begin{aligned}
+                    f'(x) &= 2e^{2x}-3e^x = 0 \\
+                    2e^{2x} &= 3e^x \\
+                    e^x &= \frac{3}{2} \\
+                    x'_0 &\in \{ln(\frac{3}{2})\} \\
+                    &\approx \{0.405\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f'(x) < 0, && x &\in (-\infty, ln(\frac{3}{2})) && (-) \\
+                    f'(x) > 0, && x &\in (ln(\frac{3}{2}), +\infty) && (+) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Concave-Convex Intervals -->
+                  $$\begin{aligned}
+                    f''(x) &= 4e^{2x}-3e^x = 0 \\
+                    4e^{2x} &= 3e^x \\
+                    e^x &= \frac{3}{4} \\
+                    x''_0 &\in \{ln(\frac{3}{4})\} \\
+                    &\approx \{-0.288\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f''(x) < 0, && x &\in (-\infty, ln(\frac{3}{4})) && (\cap) \\
+                    f''(x) > 0, && x &\in (ln(\frac{3}{4}), +\infty) && (\cup) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Maximum-Minimum Points -->
+                  $$\begin{aligned}
+                    x'_0 &= ln(\frac{3}{2}) \\
+                    f''(ln(\frac{3}{2})) &= 4e^{2ln(\frac{3}{2})}-3e^{ln(\frac{3}{2})} \\
+                    &= 4e^{ln(\frac{9}{4})}-3\frac{3}{2} \\
+                    &= 4\frac{9}{4}-\frac{9}{2} \\
+                    &= \frac{9}{2} > 0 \Rightarrow min \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Inflection Points -->
+                  $$\begin{aligned}
+                    x''_0 &= ln(\frac{3}{4}) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Plot -->
+                  <figure>
+                    <img class="img-small" src="figures/td4-1f.png" alt="figures/td4-1f.png">
+                  </figure>
+                </td>
+              </tr>
+              <tr> <!-- $2sin^2(x)-sin(x)-1$ -->
+                <td class="tg-0pky">$$2sin^2(x)-sin(x)-1$$</td>
+                <td class="tg-0pky"> <!-- Domain -->
+                  $$\begin{aligned}
+                    f(x) &= 2g^2(x)-g(x)-1 \\
+                    g(x) &= sin(x) \\
+                    \mathbf{X} &= \mathbb{R} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Asymptotes -->
+                  $$\begin{aligned}
+                  x_a &\in \{\} \text{ because } x^* \in \{\} \\
+                  && \\
+                  y_a &\in \{\} \text{ as found in "Limits at Boundaries"} \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Limits at Boundaries -->
+                  $$\begin{aligned}
+                    &\lim_{x \to -\infty} 2sin^2(x)-sin(x)-1 \\
+                    &\qquad \lim_{x \to -\infty} sin(x) \text{ diverges }\\
+                    && \\
+                    &\lim_{x \to +\infty} 2sin^2(x)-sin(x)-1 \\
+                    &\qquad \lim_{x \to +\infty} sin(x) \text{ diverges }\\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Axes Intercepts -->
+                  $$\begin{aligned}
+                    f(x) &= 2sin^2(x)-sin(x)-1 \\
+                    &= (2sin(x) + 1)(sin(x) - 1) = 0 \\
+                    sin(x_0) &= -\frac{1}{2} \Rightarrow x_0 \in \{2n\pi+arcsin(-\frac{1}{2}), 2n\pi+\pi-arcsin(-\frac{1}{2})\} \\
+                    &= \{2n\pi-\frac{\pi}{6}, 2n\pi+\pi+\frac{\pi}{6}\} \\
+                    &= \{\pi(2n-\frac{1}{6}), \pi(2n+\frac{7}{6})\}, \qquad n \in \mathbb{Z} \\
+                    sin(x_0) &= 1 \Rightarrow x_0 \in \{2n\pi+arcsin(1), 2n\pi+\pi-arcsin(1)\} \\
+                    &= \{2n\pi+\frac{\pi}{2}, 2n\pi+\pi-\frac{\pi}{2}\} \\
+                    &= \{\pi(2n+\frac{1}{2})\} \\
+                    \therefore x_0 &\in \{(2n-\frac{1}{6})\pi, (2n+\frac{3}{6})\pi, (2n+\frac{7}{6})\pi\} \\
+                    && \\
+                    y_0 &= f(0) \\
+                    &= 2sin^2(0)-sin(0)-1 \\
+                    &= -1 \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Increasing-Decreasing Intervals -->
+                  $$\begin{aligned}
+                    f'(x) &= 2(2sin(x))cos(x) - cos(x) \\
+                    &= (4sin(x) - 1) cos(x) = 0 \\
+                    sin(x'_0) &= \frac{1}{4} \Rightarrow x'_0 \in \{2n\pi+\theta, 2n\pi+\pi-\theta\} \\
+                    &\quad \text{ with } \theta=arcsin(\frac{1}{4}) \approx 0.25 \approx \frac{\pi}{12} \\
+                    cos(x'_0) &= 0 \Rightarrow x'_0 \in \{2n\pi+arccos(0), 2n\pi+2\pi-arccos(0)\} \\
+                    &= \{2n\pi+\frac{\pi}{2}, 2n\pi+2\pi-\frac{\pi}{2}\} \\
+                    \therefore x'_0 &\in \{\pi(2n + \frac{\theta}{\pi}), \pi(2n + \frac{1}{2}), \pi(2n + 1 - \frac{\theta}{\pi}), \pi(2n + 2 - \frac{1}{2})\} \\
+                    &\approx \{\pi(2n + \frac{1}{12}), \pi(2n + \frac{6}{12}), \pi(2n + \frac{11}{12}), \pi(2n + \frac{18}{12})\} \\
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                    f'(x) > 0, && x &\in (\pi(2n + \frac{1}{12}), \pi(2n + \frac{6}{12})) && (+) \\
+                    f'(x) < 0, && x &\in (\pi(2n + \frac{6}{12}), \pi(2n + \frac{11}{12})) && (-) \\
+                    f'(x) > 0, && x &\in (\pi(2n + \frac{11}{12}), \pi(2n + \frac{18}{12})) && (+) \\
+                    f'(x) < 0, && x &\in (\pi(2n + \frac{18}{12}), \pi(4n + \frac{1}{12})) && (-) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Concave-Convex Intervals -->
+                  $$\begin{aligned}
+                    f''(x) &= (4cos(x))(cos(x)) + (4sin(x) - 1)(-sin(x)) \\
+                    &= 4(cos^2(x) - sin^2(x)) + sin(x) \\
+                    &= 4(1 - sin^2(x) - sin^2(x)) + sin(x) \\
+                    &= -8sin^2(x) + sin(x) + 4 = 0 \Rightarrow \text{ use quadratic formula} \\
+                    sin(x''_0) &= \frac{1-\sqrt{129}}{16} \Rightarrow x''_0 \in \{2n\pi+\alpha, 2n\pi+\pi-\alpha\} \\
+                    &\quad \text{ with } \alpha=arcsin(\frac{1-\sqrt{129}}{16}) \approx -0.70 \approx -\frac{8\pi}{36} \\
+                    sin(x''_0) &= \frac{1+\sqrt{129}}{16} \Rightarrow x''_0 \in \{2n\pi+\beta, 2n\pi+\pi-\beta\} \\
+                    &\quad \text{ with } \beta=arcsin(\frac{1+\sqrt{129}}{16}) \approx 0.88 \approx \frac{10\pi}{36} \\
+                    \therefore x''_0 &\in \{\pi(2n+\frac{\alpha}{\pi}), \pi(2n+\frac{\beta}{\pi}), \pi(2n+1-\frac{\beta}{\pi}), \pi(2n+1-\frac{\alpha}{\pi})\} \\
+                    &\approx \{\pi(2n-\frac{8}{36}), \pi(2n+\frac{10}{36}), \pi(2n+\frac{26}{36}), \pi(2n+\frac{44}{36})\}
+                  \end{aligned}$$
+                  $$\begin{aligned}
+                     f''(x) > 0, && x &\in (\pi(2n-\frac{8}{36}), \pi(2n+\frac{10}{36})) && (\cup) \\
+                     f''(x) < 0, && x &\in (\pi(2n+\frac{10}{36}), \pi(2n+\frac{26}{36})) && (\cap) \\
+                     f''(x) > 0, && x &\in (\pi(2n+\frac{26}{36}), \pi(2n+\frac{44}{36})) && (\cup) \\
+                     f''(x) < 0, && x &\in (\pi(2n+\frac{44}{36}), \pi(4n-\frac{8}{36})) && (\cap) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Maximum-Minimum Points -->
+                  $$\begin{aligned}
+                    x'_0 &\approx \pi(2n + \frac{1}{12}) \\
+                    f''(\frac{\pi}{12}) &> 0 \Rightarrow min \\
+                    x'_0 &\approx \pi(2n + \frac{6}{12}) \\
+                    f''(\frac{6\pi}{12}) &< 0 \Rightarrow max \\
+                    x'_0 &\approx \pi(2n + \frac{11}{12}) \\
+                    f''(\frac{11\pi}{12}) &> 0 \Rightarrow min \\
+                    x'_0 &\approx \pi(2n + \frac{18}{12}) \\
+                    f''(\frac{18\pi}{12}) &< 0 \Rightarrow max \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Inflection Points -->
+                  $$\begin{aligned}
+                    x''_0 &\approx \pi(2n-\frac{8}{36}) \\
+                    x''_0 &\approx \pi(2n+\frac{10}{36}) \\
+                    x''_0 &\approx \pi(2n+\frac{26}{36}) \\
+                    x''_0 &\approx \pi(2n+\frac{44}{36}) \\
+                  \end{aligned}$$
+                </td>
+                <td class="tg-0pky"> <!-- Plot -->
+                  <figure>
+                    <img class="img-small" src="figures/td4-1g.png" alt="figures/td4-1g.png">
+                  </figure>
+                </td>
+              </tr>
+            </tbody></table>
+          </p>
+
+
+      <h2 id="problems">Problems</h2>
+        <h3>Exercise 2</h3>
+          <p>
+            <blockquote>
+              A person's blood glucose level after a meal varies according to the function (...) and $A > 0$ is constant.
+            </blockquote>
+            $$ g(t) = A(1 + e^{-3t} - e^{-5t}) $$
+
+            <blockquote>
+              What is the initial blood glucose level?
+            </blockquote>
+            $$ g(0) = A(1 + e^0 - e^0) = A $$
+
+            <blockquote>
+              What is the limit of the blood glucose as $t \to \infty$?
+            </blockquote>
+            $$\begin{aligned}
+              \lim_{t \to +\infty} & A(1 + e^{-3t} - e^{-5t}) \\
+              = & A (1 + e^{-\infty} - e^{-\infty}) \\
+              = & A (1 + 0 - 0) = A \\
+            \end{aligned}$$
+
+            <blockquote>
+              What is the maximum blood glucose level, and at what time is it reached?
+            </blockquote>
+            $$\begin{aligned}
+              g'(t) &= A(-3e^{-3t} + 5e^{-5t}) = 0 \\
+              5e^{-5t} &= 3e^{-3t} \\
+              5 &= 3e^{2t} \\
+              e^{2t} &= \frac{5}{3} \\
+              2t &= ln(\frac{5}{3}) \\
+              \therefore t^* &= \frac{1}{2} ln(\frac{5}{3}) \\
+              &= ln(\sqrt{\frac{5}{3}}) \approx  0.26 \\
+            \end{aligned}$$
+
+            $$\begin{aligned}
+              g^* = g(t*) &= A(1 + e^{-3ln(\sqrt{\frac{5}{3}})} -e^{-5ln(\sqrt{\frac{5}{3}})})\\
+              &= A(1 + \frac{5}{3}^\frac{-3}{2} - \frac{5}{3}^\frac{-5}{2}) \\
+              &\approx 1.19 A
+            \end{aligned}$$
+
+            <blockquote>
+              Plot the curve of $g(t)$ for $t \in [0, \infty)$.
+            </blockquote>
+            <figure>
+              <img class="img-small" src="figures/td4-2.png" alt="figures/td4-2.png">
+            </figure>
+          </p>
+
+        <h3>Exercise 3</h3>
+          <p>
+            <blockquote>
+              Two bacterial colonies grow in the same Petri dish and share the same food supply. The first colony grows according to the law (...) The second colony grows according to the law (...) The initial number of bacteria in each colony is 6 (in units of thousands of cells). Time is measured in days. At time $t = 4$ days, the food supply is removed, and the colonies begin to die.
+            </blockquote>
+            $$\begin{aligned}
+              b_1(t) &= -t^3 + 5t^2 - 3t + A_0 \\
+              b_2(t) &= 3t + A_0 \\
+              b_1(0) &= b_2(0) = 6 \\
+              t &\in [0,4] \\
+            \end{aligned}$$
+
+            <blockquote>
+              Show, using the initial conditions, that $A_0 = 6$.
+            </blockquote>
+            $$\begin{aligned}
+              b_1(0) &= 6 \\
+              -(0)^3 + 5(0)^2 - 3(0) + A_0 &= 6 \\
+              A_0 &= 6 \\
+              && \\
+              b_2(0) &= 6 \\
+              3(0) + A_0 &= 6 \\
+              A_0 &= 6 \\
+            \end{aligned}$$
+
+            <blockquote>
+              Calculate the derivatives of $b_1$ and $b_2$. At time $t = 0$, which population grows the fastest?
+            </blockquote>
+            $$\begin{aligned}
+              b_1'(t) &= -3t^2 + 10t - 3 \\
+              b_2'(t) &= 3 \\
+              b_1'(0) = -3 &< b_2'(0) = 3 \\
+            \end{aligned}$$
+            $$\text{In other words, }b_2\text{ grows faster than }b_1\text{ at }t_0$$
+
+            <blockquote>
+              During the phase when food is present, determine the maximum and minimum values of each population. At what times are these values reached?
+            </blockquote>
+            $$\begin{aligned}
+              b_1'(t) &= -3t^2 + 10t - 3 = 0 \\
+              &= (3t-1)(t-3) = 0 \\
+              t'_0 &\in \{\frac{1}{3}, 3 \} \\
+              && \\
+              b_1''(t) &= -6t + 10 \\
+              b_1''(\frac{1}{3}) &= 8 > 0 \Rightarrow \text{min} \\
+              b_1''(3) &= -8 < 0 \Rightarrow \text{max} \\
+              && \\
+              b_1(\frac{1}{3}) &= -(\frac{1}{3})^3 + 5(\frac{1}{3})^2 - 3(\frac{1}{3}) + 6 \\
+              &=-\frac{1}{27}+\frac{5}{9}+5 = \frac{149}{27} \approx 5.52 \\
+              b_1(3) &= -(3)^3 + 5(3)^2 - 3(3) + 6 \\
+              &= -27 + 45 - 9 + 6 = 15 \\
+              && \\
+              b_2'(t) &= 3 \neq 0 \therefore \text{ no min/max } \\
+            \end{aligned}$$
+            In other words, $b_1$ reaches a minimum at $t = \frac{1}{3}$ with a population of $\frac{149}{27} \approx 5.52$. It then reaches a maximum at $t = 3$ with a population of $15$. On the other hand, $b_2$ grows linearly and has neither minima nor maxima.
+          </p>
+
+
+    </div>
+  </body>
+</html>

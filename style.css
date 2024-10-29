@@ -9,7 +9,6 @@ html, body{
 .tg  {
   border-collapse:collapse;
   border-spacing:0; margin: 0 auto;
-
   margin: 2rem auto;
 }
 .tg td, .tg th{
@@ -20,6 +19,7 @@ html, body{
 .tg th{
   font-weight: bold !important;
   color: cadetblue;
+  text-align:center;
 }
 .tg .tg-nrix{
   text-align:center;
@@ -85,8 +85,11 @@ small {
 img {
   max-width: 800px;
 }
+.img-small {
+  max-width: 500px;
+}
 figure{
-  margin: 2rem !important;
+  /* margin: 2rem !important; */
   display: flex; flex-direction: column;
   align-items: center;
 }
@@ -117,4 +120,24 @@ b{
   align-items: center;
   overflow-x: scroll;
   flex-wrap: nowrap;
+}
+table {
+  display: block;
+  white-space: nowrap;
+  /* overflow-x: auto;
+  overflow-y: scroll;
+  height: 400px; */
+}
+
+
+.fixed-header thead {
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Keep it on top of other rows */
+}
+.scrollable {
+  display: block;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px;
 }
