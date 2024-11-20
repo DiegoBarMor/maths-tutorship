@@ -8,9 +8,10 @@
 | TD2     | 01/10 | 13h30 | 15h30 | Function Analysis |
 | TD3     | 08/10 | 13h30 | 15h30 | Limits and Derivatives |
 | TD4     | 05/11 | 13h30 | 15h30 | Function Analysis |
-| TD5     | 26/11 | 13h30 | 15h30 | Optimization, Taylor |
-| TD6     | 04/12 | 13h30 | 15h30 | Matrices |
-| TD7     | 11/12 | 14h00 | 17h00 | Eigenvalues and Eigenvectors, Final Review |
+| TD5     | 20/11 | 11h00 | 13h00 | Optimization, Taylor |
+| TD6     | 26/11 | 13h30 | 15h30 | Matrices |
+| TD7     | 04/12 | 13h30 | 15h30 | Eigenvalues and Eigenvectors |
+| TD8     | 11/12 | 14h00 | 17h00 | Final Review |
 
 ## TD 1
 - **Factoring**: 1, 3, 12
