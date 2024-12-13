@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mathematics Tutorship</title>
+    <link rel="stylesheet" type="text/css" href=style.css>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script type = "text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <style>
+      blockquote {margin-top: 25px; margin-bottom: 25px; margin-left: 100px; margin-right: 100px; background-color: #dddddd;}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="line">
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/index.html">Index</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html">Cheatsheet</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/scripts.html">Scripts</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td1.html">TD 1</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td2.html">TD 2</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td3.html">TD 3</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td4.html">TD 4</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td5.html">TD 5</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td6.html">TD 6</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td7.html">TD 7</a>
+      </div>
+    </nav>
+
+    <div class="contents"> <h1>TD 7</h1>
+      <h2>Index</h2>
+        <ul>
+          <li><a class="btn" href="#eigen">Eigenvalues and Eigenvectors</a></li>
+          <li><a class="btn" href="#hessian">Hessian Matrix</a></li>
+        </ul>
+
+      <h2 id="eigen">Eigenvalues and Eigenvectors</h2>
+        <h3>Exercise 1</h3>
+          <p>
+            <blockquote>
+              Find the eigenvalues and eigenvectors of $A = \begin{bmatrix}4&1\\2&3\\\end{bmatrix}$.
+            </blockquote>
+
+            Recall that an eigenvalue $\lambda$ and its respective eigenvector $v$ for matrix $A$ is defined as $Av = \lambda v$. This can be rearranged into $Av - \lambda v = 0$, then $Av - \lambda I v = 0$ (where $I$ is the identity matrix) and finally $(A - \lambda I) v = 0$. To find the eigenvalues, solve the polynomial obtained by equaling to $0$ the determinant of the matrix $(A - \lambda I)$.
+
+            $$\begin{aligned}
+              det(A - \lambda I) &= 0 \\
+              det(\begin{bmatrix}4&1\\2&3\\\end{bmatrix} - \lambda \begin{bmatrix}1&0\\0&1\\\end{bmatrix}) &= 0 \\
+              det(\begin{bmatrix}4&1\\2&3\\\end{bmatrix} - \begin{bmatrix}\lambda&0\\0&\lambda\\\end{bmatrix}) &= 0 \\
+              det(\begin{bmatrix}4-\lambda&1\\2&3-\lambda\\\end{bmatrix} &= 0 \\
+              (4-\lambda)(3-\lambda) - (2 \times 1) &= 0 \\
+              \lambda^2 - 7\lambda + 12 - 2 &= 0 \\
+              \lambda^2 - 7\lambda + 10 &= 0 \\
+              (\lambda-2)(\lambda-5) &= 0 \\
+              \therefore \lambda &\in \{2,5\}
+            \end{aligned}$$
+
+            To find a representative eigenvector for each of these eigenvalues, $\lambda_1 = 2$ and $\lambda_2 = 5$, just evaluate with the value of interest for $\lambda$ in the expression $(A - \lambda I) v = 0$, then solve for $v = \begin{bmatrix}x\\y\\\end{bmatrix}$. Once you find the relationship between $x$ and $y$, just set $x=1$ and evaluate $y$: this will give you one possible eigenvector for the respective eigenvalue. If you set $x$ to any other value, you would find another eigenvector corresponding to the same eigenvalue, which is also valid. All these eigenvectors lay in the same "line" on the plane that only gets scaled without changing direction, when the transformation $A$ is applied.
+
+            $$\begin{aligned}
+              (A - \lambda_1 I) v_1 &= 0 \\
+              \begin{bmatrix}4-\lambda_1&1\\2&3-\lambda_1\\\end{bmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{bmatrix}4-2&1\\2&3-2\\\end{bmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{bmatrix}2&1\\2&1\\\end{bmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{bmatrix}2x+y\\2x+y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \left \{ \begin{align*} 2x+y=0 \\ 2x+y=0 \\ \end{align*} \right . \\
+              y &= -2x \\
+              \therefore v_1 &= \begin{bmatrix}1\\-2\\\end{bmatrix} \\
+            \end{aligned}$$
+
+            $$\begin{aligned}
+              (A - \lambda_2 I) v_2 &= 0 \\
+              \begin{bmatrix}4-\lambda_2&1\\2&3-\lambda_2\\\end{bmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{bmatrix}4-5&1\\2&3-5\\\end{bmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{bmatrix}-1&1\\2&-2\\\end{bmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{bmatrix}-x+y\\2x-2y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \left \{ \begin{align*} y-x=0 \\ 2x-2y=0 \\ \end{align*} \right . \\
+              y &= x \\
+              \therefore v_2 &= \begin{bmatrix}1\\1\\\end{bmatrix} \\
+            \end{aligned}$$
+          </p>
+
+        <h3>Exercise 2</h3>
+          <p>
+            <blockquote>
+              Consider a simplified model of a population of two species in an ecosystem. Let $P_1(t)$ and $P_2(t)$ represent the populations of species $1$ and species $2$ at time $t$, respectively. The popluation dynamics can be described by a linear difference equation that models the interactions between the two species.
+            </blockquote>
+            $$
+              \begin{bmatrix}P_1(t+1)\\P_2(t+1)\\\end{bmatrix} = \begin{bmatrix}2&1\\1&2\\\end{bmatrix} \begin{bmatrix}P_1(t)\\P_2(t)\\\end{bmatrix}
+            $$
+
+            <blockquote>
+              Find the eigenvalues of the matrix representing the population dynamics.
+            </blockquote>
+
+            $$\begin{aligned}
+              \begin{vmatrix}2-\lambda&1\\1&2-\lambda\\\end{vmatrix} &= 0 \\
+              (2-\lambda)^2-1^2 &= 0 \\
+              \lambda^2-4\lambda+4-1 &= 0 \\
+              \lambda^2-4\lambda+3 &= 0 \\
+              (\lambda-1)(\lambda-3) &= 0 \\
+              \therefore \lambda &\in \{1,3\}
+            \end{aligned}$$
+
+            <blockquote>
+              Determine the eigenvectors corresponding to each eigenvalue.
+            </blockquote>
+
+            $$\begin{aligned}
+              \begin{vmatrix}2-\lambda_1&1\\1&2-\lambda_1\\\end{vmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{vmatrix}1&1\\1&1\\\end{vmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{bmatrix}x+y\\x+y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \left \{ \begin{align*} x+y=0 \\ x+y=0 \\ \end{align*} \right . \\
+              y &= -x \\
+              \therefore v_1 &= \begin{bmatrix}1\\-1\\\end{bmatrix} \\
+            \end{aligned}$$
+
+            $$\begin{aligned}
+              \begin{vmatrix}2-\lambda_2&1\\1&2-\lambda_2\\\end{vmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{vmatrix}-1&1\\1&-1\\\end{vmatrix} \begin{bmatrix}x\\y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{bmatrix}x-y\\x-y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \left \{ \begin{align*} x-y=0 \\ x-y=0 \\ \end{align*} \right . \\
+              y &= x \\
+              \therefore v_2 &= \begin{bmatrix}1\\1\\\end{bmatrix} \\
+            \end{aligned}$$
+
+            <blockquote>
+              Use the eigenvalues and eigenvectors to analyze the long-term behavior of the population dynamics.
+            </blockquote>
+
+            First, it's important to have clear how to interpret the initial equation, $\begin{bmatrix}P_1(t+1)\\P_2(t+1)\\\end{bmatrix} = \begin{bmatrix}2&1\\1&2\\\end{bmatrix} \begin{bmatrix}P_1(t)\\P_2(t)\\\end{bmatrix}$. If you summarize it as $p_n = M p_i$, you can read it as "An initial list of populations at time $t$, grouped in the vector $p_i$, evolves in time according to some model $M$, to reach a new list of populations values at time $t+1$, grouped in the vector $p_n$". So when you see the expression $\begin{bmatrix}2&1\\1&2\\\end{bmatrix} \begin{bmatrix}P_1(t)\\P_2(t)\\\end{bmatrix}$, it just refers to the effect of applying the population dynamics model $\begin{bmatrix}2&1\\1&2\\\end{bmatrix}$ to the populations $p_i$, and obtaining the new populations $p_n$. <br><br>
+
+            Now, recall that the eigenvectors were obtained by finding a relationship between $x$ and $y$. It goes the other way too: given an eigenvector, you can easily get the relationship between the vector's components. The interesting property is that, by definition, when transforming the eigenvector with a given matrix, you're just scaling all its elements by the same value $\lambda$, hence this relationship stays the same. For example, an eigenvector $u = \begin{bmatrix}1\\3\\\end{bmatrix}$ with eigenvalue $\lambda = 7$ will get transformed to $\lambda u = \begin{bmatrix}7\\21\\\end{bmatrix}$; $y$ is the triple of $x$ both before and after transforming the vector. <br><br>
+
+            In this case $x$ represents the population $P_1$ and $y$ represents the population $P_2$. The eigenvectors corresponding to the eigenvalue $\lambda_1=1$ will have either negative $x$ or negative $y$, as seen by the representative eigenvector $v_1 = \begin{bmatrix}1\\-1\\\end{bmatrix}$. However, populations can't be negative, so these eigenvectors can be ignored.             For the eigenvalue $\lambda_2=3$, the representative eigenvector $v_1 = \begin{bmatrix}1\\1\\\end{bmatrix}$ shows that the relationship between the populations is simply $P_1 = P_2$. Therefore, it can be said that if $P_1(t)$ and $P_2(t)$ are the same at a given moment, then after applying the model $\begin{bmatrix}2&1\\1&2\\\end{bmatrix}$, the populations $P_1(t+1)$ and $P_2(t+1)$ will still be the same at the next timestep, and both will have increased by a factor of $\lambda_2 = 3$.
+          </p>
+
+
+      <h2 id="hessian">Hessian Matrix</h2>
+        For determining the position and nature of the critil points of a bivariate function $f(x,y)$:
+        <ol>
+          <li>Calculate the gradient of $f(x,y)$ and equal it to 0, then solve the resolving equation: $\nabla f(x,y) = \begin{bmatrix}\dfrac{\partial f}{\partial x}\\\dfrac{\partial f}{\partial y}\\\end{bmatrix} = 0$. This will let you find the critical points $x^*$ and $y^*$ of the function.</li>
+          <li>Calculate the Hessian matrix $H(x,y) = \begin{bmatrix}\dfrac{\partial^2 f}{\partial x^2} & \dfrac{\partial^2 f}{\partial x \partial y} \\ \dfrac{\partial^2 f}{\partial y \partial x} & \dfrac{\partial^2 f}{\partial y^2} \\ \end{bmatrix}$. Note that for the following steps to work, this must hold: $\dfrac{\partial^2 f}{\partial x \partial y} = \dfrac{\partial^2 f}{\partial y \partial x}$. </li>
+          <li>Evaluate the Hessian matrix in using the values for each critical point $H(x^*, y^*)$. From the resulting matrix, you can use the sign of either the determinant or the eigenvalues to understand what's the behavior at that point. Both options work because the determinant of a matrix is the product of its eigenvalues, $|M| = \lambda_1 \lambda_2$. </li>
+          <table class="tg"><thead>
+            <tr>
+              <th class="tg-0pky">$|M|$</th>
+              <th class="tg-0pky">$\lambda_1$</th>
+              <th class="tg-0pky">$\lambda_2$</th>
+              <th class="tg-0pky">Matrix Type</th>
+              <th class="tg-0pky">Critical Point</th>
+            </tr></thead>
+          <tbody>
+            <tr>
+              <td class="tg-0pky" style="text-align:center">$+$</td>
+              <td class="tg-0pky" style="text-align:center">$+$</td>
+              <td class="tg-0pky" style="text-align:center">$+$</td>
+              <td class="tg-0pky" style="text-align:center">positive-definite</td>
+              <td class="tg-0pky" style="text-align:center"><b>minimum</b></td>
+            </tr>
+            <tr>
+              <td class="tg-0pky" style="text-align:center">$+$</td>
+              <td class="tg-0pky" style="text-align:center">$-$</td>
+              <td class="tg-0pky" style="text-align:center">$-$</td>
+              <td class="tg-0pky" style="text-align:center">negative-definite</td>
+              <td class="tg-0pky" style="text-align:center"><b>maximum</b></td>
+            </tr>
+            <tr>
+              <td class="tg-0pky" style="text-align:center">$-$</td>
+              <td class="tg-0pky" style="text-align:center">$+$</td>
+              <td class="tg-0pky" style="text-align:center">$-$</td>
+              <td class="tg-0pky" style="text-align:center">indefinite</td>
+              <td class="tg-0pky" style="text-align:center"><b>saddle</b></td>
+            </tr>
+            <tr>
+              <td class="tg-0pky" style="text-align:center">$0$</td>
+              <td class="tg-0pky" style="text-align:center">$\pm$</td>
+              <td class="tg-0pky" style="text-align:center">$0$</td>
+              <td class="tg-0pky" style="text-align:center">(positive/negative) semi-definite</td>
+              <td class="tg-0pky" style="text-align:center"><b>(inconclusive)</b></td>
+            </tr>
+          </tbody></table>
+        </ol>
+
+        <h3>Exercise 3</h3>
+          <p>
+            $$\begin{aligned}
+              f(x,y) &= x^2+4xy+2y^2 \\
+              \nabla f = \begin{bmatrix}2x+4y\\4x+4y\\\end{bmatrix} &= \begin{bmatrix}0\\0\\\end{bmatrix} \\
+              \begin{bmatrix}2x\\4x\\\end{bmatrix} &= \begin{bmatrix}-4y\\-4y\\\end{bmatrix} \\
+              &\therefore \text{Critical point: } (0,0) \\
+              \\
+              H(x,y) &= \begin{bmatrix}2&4\\4&4\\\end{bmatrix} \\
+              H(0,0) &= \begin{bmatrix}2&4\\4&4\\\end{bmatrix} \\
+              \\
+              det(\begin{bmatrix}2&4\\2&4\\\end{bmatrix}) &= 2 \times 4 - 4 \times 4 \\
+              &= -8 < 0 \therefore \text{saddle}
+            \end{aligned}$$
+          </p>
+
+
+    </div>
+  </body>
+</html>

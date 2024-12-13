@@ -27,7 +27,8 @@
         <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td3.html">TD 3</a>
         <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td4.html">TD 4</a>
         <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td5.html">TD 5</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td5.html">TD 6</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td6.html">TD 6</a>
+        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td7.html">TD 7</a>
       </div>
     </nav>
 
@@ -60,9 +61,9 @@
           <ul>
             <li> Consider an arbitrary shape described by some points (vectors) in a n-dimensional space. The <b>determinant</b> of a square matrix $M$, $det(M)$ or $|M|$, represents how much the area (in the case of a 2-D space, the volume for a 3-D space, and so on) changes after performing the transformation described by $M$. This means that for $|M| > 1$, the area/volume of the arbitrary shape increases, for $|M| = 1$ it remains the same and for $0 < |M| < 1$ it shrinks. The same ideas apply when $|M| < 0$, with the added effect that the arbitrary shape gets <i>reflected</i> or <i>reversed</i> in some way. When $|M| = 0$, the whole space "collapses" into a lower dimension (for example, from 2D to 1D and all vectors ending up being placed into a single line). </li>
             <li>Given a matrix $M$, its <b>inverse</b> $M^{-1}$ represents reversing the transformation performed by $M$. If you apply $M$ and then undo it with $M^{-1}$, it's like no transformation was performed at all (i.e. identity matrix $I$). This is a way to interpret the fact that $MM^{-1}=M^{-1}M=I$.</li>
-            <li>Consider the vectors in a linear space as arrows starting from the origin, with an "angle" with respect to the space's axes. When applying a linear transformation $M$ to the space, these arrows can get scaled in size and/or have their "angle" changed. Sometimes a vector $v$ might be scaled by a value $\lambda$, while its "angle" isn't affected. In this case, $v$ corresponds to an <b>eigenvector</b> and $\lambda$ to its respective <b>eigenvalue</b>. It is just a way to interpret the statement $Mv = \lambda v$. You can read it as:
+            <li>Consider the vectors in a linear space as arrows starting from the origin, with an "angle" with respect to the space's axes. When applying a linear transformation $M$ to the space, these arrows can get scaled in size and/or have their "angle" changed. Sometimes, a transformation might change the magnitude of the arrow described by $v$, scaling said magnitude by a value $\lambda$, while the arrow's "angle" remains unaffected. In this case, $v$ corresponds to an <b>eigenvector</b> and $\lambda$ to its respective <b>eigenvalue</b>. This is just a geometrical way to interpret the statement $Mv = \lambda v$. You can read it as:
               <blockquote>
-                Applying the transformation $M$ to the space that the vector $v$ inhabits is equivalent to just scaling the vector's size $v$ by some scalar value $\lambda$. Therefore, if $v$ is represented as an arrow, its original direction remains unaffected after the transformation.
+                Applying the transformation $M$ to a vector $v$ is equivalent to just scaling the vector's size $v$ by some scalar value $\lambda$. Therefore, if $v$ is represented as an arrow, its original direction remains unaffected after the transformation.
               </blockquote>
             </li>
             <li>A <b>rotation matrix</b> describes a specific kind of transformation where all vectors are rotated around the origin. When a pure rotation is being performed, no <i>stretching</i> or <i>squeezing</i> should be present. Therefore, the determinant of a rotation matrix $R$ must be equal to $1$. Furthermore, the condition $R^T=R^{-1}$ must be fullfilled. You can rearrange this as $RR^T=I$, which is significantly easier to check.</li>
@@ -131,7 +132,7 @@
               </tr>
             </tbody></table>
 
-            When multiplying two matrices, it's useful to think as the second matrix as a collection of vectors. Then, it just becomes a repeated matrix vector multiplication, where the "vectors" are the columns of the second matrix. For example:
+            When multiplying two matrices, it's useful to think of the second matrix as a collection of vectors. Then, it just becomes a repeated matrix vector multiplication, where the "vectors" are the columns of the second matrix. For example:
 
             $$\begin{aligned}
               BD = \begin{bmatrix}2&3&4\\1&5&6\\7&8&9\\\end{bmatrix}
