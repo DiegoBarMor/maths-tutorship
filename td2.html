@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mathematics Tutorship</title>
+    <title>Mathematics Tutorship - TD2</title>
+
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="https://raw.githack.com/DiegoBarMor/DiegoBarMor.github.io/refs/heads/main/docs/prisma.css">
     <link rel="stylesheet" type="text/css" href=style.css>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
     <script type = "text/x-mathjax-config">
       MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -12,32 +15,30 @@
     <script type="text/javascript" async
       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    <style>
-      blockquote {margin-top: 25px; margin-bottom: 25px; margin-left: 100px; margin-right: 100px; background-color: #dddddd}
-    </style>
   </head>
+
   <body>
-    <nav class="navbar">
-      <div class="line">
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/index.html">Index</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html">Cheatsheet</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/scripts.html">Scripts</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td1.html">TD 1</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td2.html">TD 2</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td3.html">TD 3</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td4.html">TD 4</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td5.html">TD 5</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td6.html">TD 6</a>
-        <a class="btn" href="https://diegobarmor.github.io/maths-tutorship/td7.html">TD 7</a>
+    <nav>
+      <div>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/index.html">Index</a>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html">Cheatsheet</a>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/scripts.html">Scripts</a>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td1.html">TD 1</a>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td2.html">TD 2</a>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td3.html">TD 3</a>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td4.html">TD 4</a>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td5.html">TD 5</a>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td6.html">TD 6</a>
+        <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td7.html">TD 7</a>
       </div>
     </nav>
 
     <div class="contents"> <h1>TD 2</h1>
       <h2>Index</h2>
         <ul>
-          <li><a class="btn" href="#analysis">Function Analysis</a></li>
-          <li><a class="btn" href="#intersections">Intersection of Functions</a></li>
-          <li><a class="btn" href="#problems">Problems</a></li>
+          <li><a href="#analysis">Function Analysis</a></li>
+          <li><a href="#intersections">Intersection of Functions</a></li>
+          <li><a href="#problems">Problems</a></li>
         </ul>
 
 
@@ -55,7 +56,7 @@
             In this case, $g(z) = ln(z)$ is the "top-most" function and wraps everything else, which is neatly "packed" in $z(x) = 2x-1$. For the <b>top-down</b> approach, let's first focus on $g(z) = ln(z)$, whose behaviour is well known.
 
             <figure>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Log_%282%29.svg" alt="plot of ln(x)">
+              <img src="figures/td2-1d_0.svg" alt="plot of ln(x)">
             </figure>
 
             It's known that $g(z) = ln(z)$ intersects with the x-axis at $z_0=1$ and that it has a vertical asymptote at $z^*=0$. Because $g(z)$ is the top-most function, these properties will also be reflected by $f(x)$. One just needs to find the respective values of $x_0$ and $x^*$ where they hold true, which can be achieved by solving $z(x)$ for $z_0$ and $z^*$ respectively.
@@ -73,7 +74,7 @@
             Note that these points can also be obtained by considering $z(x)$ as a <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#manipulations">scaling and shifting</a> operation along the x-axis. This perspective also reveals that $f(x)$ is actually $g(z)$ shrunk by a factor of 2, which wasn't evident before. Knowing this information, one can plot $f(x)$ and find its domain and codomain ($g(z)$ is also shown as reference).
 
             <figure>
-              <img src="figures/td2-1d.png" alt="figures/td2-1d.png">
+              <img src="figures/td2-1d_1.png" alt="figures/td2-1d_1.png">
             </figure>
             $$\begin{aligned}
               x    &\in (\frac{1}{2}, +\infty) \\
@@ -119,7 +120,7 @@
             Furthermore, the shape and behaviour of the function $g(z) = \sqrt{z}$ is well known.
 
             <figure>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Square_root_0_25.svg" alt="plot of sqrt(x)">
+              <img src="figures/td2-1g_1.svg" alt="plot of sqrt(x)">
             </figure>
 
             The idea now is to understand the behaviour of $g(z)$ by exploiting the fact that it's defined in terms of $z$ as its variable. This means that, whenever $z(x)$ grows, $g(z)$ will also grow; note that $g(z)$ "doesn't care" about $x$ in this case. Similarly, whenever $z(x) < 0$, $g(z)$ will be undefined. <br>
@@ -127,7 +128,7 @@
             For knowing how to plot $f(x) = g(z)$ at a given point $(x^*,y^*)$, the plot of $z(x) = x^2-5x+6$ becomes handy. One can observe the value at $z^* = z(x^*)$ and use that to know how $y^* = f(z^*)$ should be, following the previous rules. After plotting $f(x)$, the domain and co-domain become once more evident.
 
             <figure>
-              <img src="figures/td2-1g_1.png" alt="figures/td2-1g_1.png">
+              <img src="figures/td2-1g_2.png" alt="figures/td2-1g_2.png">
             </figure>
             $$\begin{aligned}
               x    &\in (-\infty, 2) \cup (3+\infty) \\
