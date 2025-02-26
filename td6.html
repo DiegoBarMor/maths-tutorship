@@ -46,16 +46,16 @@
             <li>The <b>shape</b> of a matrix is given by $(\#rows, \#columns)$. For example, $M = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ \end{bmatrix}$ has dimensions $(2,3)$. A vector $v = \begin{bmatrix} 1 \\ 2 \\ 3 \\ \end{bmatrix}$ can be thought of a matrix of shape $(3,1)$. Conversely, $M$ could be interpreted as a collection of three vectors, $M = (\begin{bmatrix} 1 \\ 4 \\ \end{bmatrix}, \begin{bmatrix} 2 \\ 5 \\ \end{bmatrix}, \begin{bmatrix} 3 \\ 6 \\ \end{bmatrix})$ </li>
             <li> You can think of a vector $v$ of shape $(n,1)$ as a point in a n-dimensional space (the $n$ elements of the vectors just indicate the coordinates of this point). The whole space can be described by all the linear combinations possible between some <b>basis vectors</b> (this is called the <b>linear span</b>).</li>
             <li>A matrix $M$ describes a <b>linear transformation</b> of this space, so if you obtain a new vector $w$ by multiplying $w = Mv$, $w$ just represents where $v$ "ends up being placed" after the space has being transformed by $M$. Also, if you think of $M$ as a collection of vectors, these vectors represent where each of the basis vectors end up being placed.</li>
-            <li>A <b>square matrix</b> is a matrix with shape $(k,k)$ (i.e. same number of rows and columns). A <b>triangular matrix</b> is any square matrix where all elements either above or below the diagonal are $0$. For example, $A = \begin{bmatrix} 2 & 3 & 4 \\ \color{red} 0 & 5 & 6 \\ \color{red} 0 & \color{red} 0 & 7 \\ \end{bmatrix}$ or $B = \begin{bmatrix} 10 & \color{red} 0 & \color{red} 0 \\ 11 & 12 & \color{red} 0 \\ 13 & 14 & 15 \\ \end{bmatrix}$ </li>
+            <li>A <b>square matrix</b> is a matrix with shape $(k,k)$ (i.e. same number of rows and columns). A <b>triangular matrix</b> is any square matrix where all elements either above or below the diagonal are $0$. For example, $A = \begin{bmatrix} 2 & 3 & 4 \\ \color{yellow} 0 & 5 & 6 \\ \color{yellow} 0 & \color{yellow} 0 & 7 \\ \end{bmatrix}$ or $B = \begin{bmatrix} 10 & \color{yellow} 0 & \color{yellow} 0 \\ 11 & 12 & \color{yellow} 0 \\ 13 & 14 & 15 \\ \end{bmatrix}$ </li>
             <li>The <b>identity matrix</b> $I$ is a matrix with the value $1$ along its <b>diagonal</b> and $0$ everywhere else. This matrix represents not transforming the space at all. For example, $I = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \\ \end{bmatrix}$</li>
-            <li>For obtaining the <b>transpose</b> $M^T$ of a matrix $M$, just swap the rows and columns of $M$. For example, $M = \begin{bmatrix} \color{green} 1 & \color{green} 2 & \color{green} 3 \\ \color{red} 4 & \color{red} 5 & \color{red} 6 \\ \color{blue} 7 & \color{blue} 8 & \color{blue} 9 \\ \end{bmatrix}, M^T = \begin{bmatrix} \color{green} 1 & \color{red} 4 & \color{blue} 7 \\ \color{green} 2 & \color{red} 5 & \color{blue} 8 \\ \color{green} 3 & \color{red} 6 & \color{blue} 9 \\ \end{bmatrix}$. You can also visualize it as: $M = \begin{bmatrix} 1 & \color{green} 2 & \color{red} 3 \\ \color{green} 4 & 5 & \color{blue} 6 \\ \color{red} 7 & \color{blue} 8 & 9 \\ \end{bmatrix}, M^T = \begin{bmatrix} 1 & \color{green} 4 & \color{red} 7 \\ \color{green} 2 & 5 & \color{blue} 8 \\ \color{red} 3 & \color{blue} 6 & 9 \\ \end{bmatrix}$ </li>
+            <li>For obtaining the <b>transpose</b> $M^T$ of a matrix $M$, just swap the rows and columns of $M$. For example, $M = \begin{bmatrix} \color{magenta} 1 & \color{magenta} 2 & \color{magenta} 3 \\ \color{yellow} 4 & \color{yellow} 5 & \color{yellow} 6 \\ \color{cyan} 7 & \color{cyan} 8 & \color{cyan} 9 \\ \end{bmatrix}, M^T = \begin{bmatrix} \color{magenta} 1 & \color{yellow} 4 & \color{cyan} 7 \\ \color{magenta} 2 & \color{yellow} 5 & \color{cyan} 8 \\ \color{magenta} 3 & \color{yellow} 6 & \color{cyan} 9 \\ \end{bmatrix}$. You can also visualize it as: $M = \begin{bmatrix} 1 & \color{magenta} 2 & \color{yellow} 3 \\ \color{magenta} 4 & 5 & \color{cyan} 6 \\ \color{yellow} 7 & \color{cyan} 8 & 9 \\ \end{bmatrix}, M^T = \begin{bmatrix} 1 & \color{magenta} 4 & \color{yellow} 7 \\ \color{magenta} 2 & 5 & \color{cyan} 8 \\ \color{yellow} 3 & \color{cyan} 6 & 9 \\ \end{bmatrix}$ </li>
           </ul>
 
           <h3>About Matrix Multiplication</h3>
           <ul>
             <li>A <b>matrix multiplication</b> $A=BC$ can be interpreted as transforming the space with $C$ and then applying the transformation described by $B$ (read it right to left, like when reading functions e.g. $B(C(v))$). This is equivalent to applying the transformation $A$ directly.</li>
-            <li>Consider two arbitrary matrices $P$ and $Q$ with dimensions $(m,k)$ and $(k,n)$ respectively ($k,m,n$ are different integers). A new matrix $M$ with shape $(m,n)$ can be obtained by multiplying $P$ and $Q$ in the correct order, $M=PQ$, as the number of columns of $P$ matches the number of rows of $Q$. You can think of where this shape comes from as: $(\color{red} m, \color{green} k) \times (\color{green} k, \color{blue} n) = (\color{red} m, \color{blue} n)$.</li>
-            <li>Conversely, the multiplication $QP$ isn't possible, as the shapes don't coincide: $(\color{green} k, \color{blue} n) \times (\color{red} m, \color{green} k)$ because $n \neq m$. </li>
+            <li>Consider two arbitrary matrices $P$ and $Q$ with dimensions $(m,k)$ and $(k,n)$ respectively ($k,m,n$ are different integers). A new matrix $M$ with shape $(m,n)$ can be obtained by multiplying $P$ and $Q$ in the correct order, $M=PQ$, as the number of columns of $P$ matches the number of rows of $Q$. You can think of where this shape comes from as: $(\color{yellow} m, \color{magenta} k) \times (\color{magenta} k, \color{cyan} n) = (\color{yellow} m, \color{cyan} n)$.</li>
+            <li>Conversely, the multiplication $QP$ isn't possible, as the shapes don't coincide: $(\color{magenta} k, \color{cyan} n) \times (\color{yellow} m, \color{magenta} k)$ because $n \neq m$. </li>
           </ul>
 
           <h3>Other Concepts</h3>
@@ -103,32 +103,32 @@
             <tbody>
               <tr>
                 <td class="tg-0pky" style="text-align:center">$BC$</td>
-                <td class="tg-0pky" style="text-align:center">$(3, \color{red} 3) \times (\color{red} 2,2)$</td>
+                <td class="tg-0pky" style="text-align:center">$(3, \color{yellow} 3) \times (\color{yellow} 2,2)$</td>
                 <td class="tg-0pky" style="text-align:center">can't multiply</td>
               </tr>
               <tr>
                 <td class="tg-0pky" style="text-align:center">$CB$</td>
-                <td class="tg-0pky" style="text-align:center">$(2, \color{red} 2) \times (\color{red} 3,3)$</td>
+                <td class="tg-0pky" style="text-align:center">$(2, \color{yellow} 2) \times (\color{yellow} 3,3)$</td>
                 <td class="tg-0pky" style="text-align:center">can't multiply</td>
               </tr>
               <tr>
                 <td class="tg-0pky" style="text-align:center">$BD$</td>
-                <td class="tg-0pky" style="text-align:center">$(3,\color{green} 3) \times (\color{green} 3,2)$</td>
+                <td class="tg-0pky" style="text-align:center">$(3,\color{magenta} 3) \times (\color{magenta} 3,2)$</td>
                 <td class="tg-0pky" style="text-align:center">$(3,2)$</td>
               </tr>
               <tr>
                 <td class="tg-0pky" style="text-align:center">$DB$</td>
-                <td class="tg-0pky" style="text-align:center">$(3, \color{red} 2) \times (\color{red} 3,3)$</td>
+                <td class="tg-0pky" style="text-align:center">$(3, \color{yellow} 2) \times (\color{yellow} 3,3)$</td>
                 <td class="tg-0pky" style="text-align:center">can't multiply</td>
               </tr>
               <tr>
                 <td class="tg-0pky" style="text-align:center">$CD$</td>
-                <td class="tg-0pky" style="text-align:center">$(2, \color{red} 2) \times (\color{red} 3,2)$</td>
+                <td class="tg-0pky" style="text-align:center">$(2, \color{yellow} 2) \times (\color{yellow} 3,2)$</td>
                 <td class="tg-0pky" style="text-align:center">can't multiply</td>
               </tr>
               <tr>
                 <td class="tg-0pky" style="text-align:center">$DC$</td>
-                <td class="tg-0pky" style="text-align:center">$(3, \color{green} 2) \times (\color{green} 2,2)$</td>
+                <td class="tg-0pky" style="text-align:center">$(3, \color{magenta} 2) \times (\color{magenta} 2,2)$</td>
                 <td class="tg-0pky" style="text-align:center">$(3,2)$</td>
               </tr>
             </tbody></table>
@@ -140,29 +140,29 @@
               \begin{bmatrix}4&1\\9&2\\3&7\\\end{bmatrix}
               &=\begin{bmatrix}?&?\\?&?\\?&?\\\end{bmatrix} \\\\
 
-              \begin{bmatrix}\color{red}2&\color{red}3&\color{red}4\\1&5&6\\7&8&9\\\end{bmatrix}
-              \begin{bmatrix}\color{blue}4&1\\\color{blue}9&2\\\color{blue}3&7\\\end{bmatrix}
-              &=\begin{bmatrix}\color{red}{(2)}\color{blue}{(4)}+\color{red}{(3)}\color{blue}{(9)}+\color{red}{(4)}\color{blue}{(3)}&?\\?&?\\?&?\\\end{bmatrix} \\\\
+              \begin{bmatrix}\color{yellow}2&\color{yellow}3&\color{yellow}4\\1&5&6\\7&8&9\\\end{bmatrix}
+              \begin{bmatrix}\color{cyan}4&1\\\color{cyan}9&2\\\color{cyan}3&7\\\end{bmatrix}
+              &=\begin{bmatrix}\color{yellow}{(2)}\color{cyan}{(4)}+\color{yellow}{(3)}\color{cyan}{(9)}+\color{yellow}{(4)}\color{cyan}{(3)}&?\\?&?\\?&?\\\end{bmatrix} \\\\
 
-              \begin{bmatrix}2&3&4\\\color{red}1&\color{red}5&\color{red}6\\7&8&9\\\end{bmatrix}
-              \begin{bmatrix}\color{blue}4&1\\\color{blue}9&2\\\color{blue}3&7\\\end{bmatrix}
-              &=\begin{bmatrix}47&?\\\color{red}{(1)}\color{blue}{(4)}+\color{red}{(5)}\color{blue}{(9)}+\color{red}{(6)}\color{blue}{(3)}&?\\?&?\\\end{bmatrix} \\\\
+              \begin{bmatrix}2&3&4\\\color{yellow}1&\color{yellow}5&\color{yellow}6\\7&8&9\\\end{bmatrix}
+              \begin{bmatrix}\color{cyan}4&1\\\color{cyan}9&2\\\color{cyan}3&7\\\end{bmatrix}
+              &=\begin{bmatrix}47&?\\\color{yellow}{(1)}\color{cyan}{(4)}+\color{yellow}{(5)}\color{cyan}{(9)}+\color{yellow}{(6)}\color{cyan}{(3)}&?\\?&?\\\end{bmatrix} \\\\
 
-              \begin{bmatrix}2&3&4\\1&5&6\\\color{red}7&\color{red}8&\color{red}9\\\end{bmatrix}
-              \begin{bmatrix}\color{blue}4&1\\\color{blue}9&2\\\color{blue}3&7\\\end{bmatrix}
-              &=\begin{bmatrix}47&?\\67&?\\\color{red}{(7)}\color{blue}{(4)}+\color{red}{(8)}\color{blue}{(9)}+\color{red}{(9)}\color{blue}{(3)}&?\\\end{bmatrix} \\\\
+              \begin{bmatrix}2&3&4\\1&5&6\\\color{yellow}7&\color{yellow}8&\color{yellow}9\\\end{bmatrix}
+              \begin{bmatrix}\color{cyan}4&1\\\color{cyan}9&2\\\color{cyan}3&7\\\end{bmatrix}
+              &=\begin{bmatrix}47&?\\67&?\\\color{yellow}{(7)}\color{cyan}{(4)}+\color{yellow}{(8)}\color{cyan}{(9)}+\color{yellow}{(9)}\color{cyan}{(3)}&?\\\end{bmatrix} \\\\
 
-              \begin{bmatrix}\color{red}2&\color{red}3&\color{red}4\\1&5&6\\7&8&9\\\end{bmatrix}
-              \begin{bmatrix}4&\color{blue}1\\9&\color{blue}2\\3&\color{blue}7\\\end{bmatrix}
-              &=\begin{bmatrix}47&\color{red}{(2)}\color{blue}{(1)}+\color{red}{(3)}\color{blue}{(2)}+\color{red}{(4)}\color{blue}{(7)}\\67&?\\127&?\\\end{bmatrix} \\\\
+              \begin{bmatrix}\color{yellow}2&\color{yellow}3&\color{yellow}4\\1&5&6\\7&8&9\\\end{bmatrix}
+              \begin{bmatrix}4&\color{cyan}1\\9&\color{cyan}2\\3&\color{cyan}7\\\end{bmatrix}
+              &=\begin{bmatrix}47&\color{yellow}{(2)}\color{cyan}{(1)}+\color{yellow}{(3)}\color{cyan}{(2)}+\color{yellow}{(4)}\color{cyan}{(7)}\\67&?\\127&?\\\end{bmatrix} \\\\
 
-              \begin{bmatrix}2&3&4\\\color{red}1&\color{red}5&\color{red}6\\7&8&9\\\end{bmatrix}
-              \begin{bmatrix}4&\color{blue}1\\9&\color{blue}2\\3&\color{blue}7\\\end{bmatrix}
-              &=\begin{bmatrix}47&36\\67&\color{red}{(1)}\color{blue}{(1)}+\color{red}{(5)}\color{blue}{(2)}+\color{red}{(6)}\color{blue}{(7)}\\127&?\\\end{bmatrix} \\\\
+              \begin{bmatrix}2&3&4\\\color{yellow}1&\color{yellow}5&\color{yellow}6\\7&8&9\\\end{bmatrix}
+              \begin{bmatrix}4&\color{cyan}1\\9&\color{cyan}2\\3&\color{cyan}7\\\end{bmatrix}
+              &=\begin{bmatrix}47&36\\67&\color{yellow}{(1)}\color{cyan}{(1)}+\color{yellow}{(5)}\color{cyan}{(2)}+\color{yellow}{(6)}\color{cyan}{(7)}\\127&?\\\end{bmatrix} \\\\
 
-              \begin{bmatrix}2&3&4\\1&5&6\\\color{red}7&\color{red}8&\color{red}9\\\end{bmatrix}
-              \begin{bmatrix}4&\color{blue}1\\9&\color{blue}2\\3&\color{blue}7\\\end{bmatrix}
-              &=\begin{bmatrix}47&36\\67&53\\127&\color{red}{(7)}\color{blue}{(1)}+\color{red}{(8)}\color{blue}{(2)}+\color{red}{(9)}\color{blue}{(7)}\\\end{bmatrix} \\\\
+              \begin{bmatrix}2&3&4\\1&5&6\\\color{yellow}7&\color{yellow}8&\color{yellow}9\\\end{bmatrix}
+              \begin{bmatrix}4&\color{cyan}1\\9&\color{cyan}2\\3&\color{cyan}7\\\end{bmatrix}
+              &=\begin{bmatrix}47&36\\67&53\\127&\color{yellow}{(7)}\color{cyan}{(1)}+\color{yellow}{(8)}\color{cyan}{(2)}+\color{yellow}{(9)}\color{cyan}{(7)}\\\end{bmatrix} \\\\
 
               \begin{bmatrix}2&3&4\\1&5&6\\7&8&9\\\end{bmatrix}
               \begin{bmatrix}4&1\\9&2\\3&7\\\end{bmatrix}
@@ -173,13 +173,13 @@
         <h3>Exercise 3</h3>
           <p>
             $$\begin{aligned}
-              &det  \begin{pmatrix}\color{red}1&\color{green}2&\color{blue}3\\\color{red}4&\color{green}5&\color{blue}6\\\color{red}2&\color{green}4&\color{blue}6\\\end{pmatrix} \\
+              &det  \begin{pmatrix}\color{yellow}1&\color{magenta}2&\color{cyan}3\\\color{yellow}4&\color{magenta}5&\color{cyan}6\\\color{yellow}2&\color{magenta}4&\color{cyan}6\\\end{pmatrix} \\
 
-              =& + (\color{red}1) det \begin{pmatrix}\color{green}5&\color{blue}6\\\color{green}4&\color{blue}6\end{pmatrix} - (\color{green}2) det \begin{pmatrix}\color{red}4&\color{blue}6\\\color{red}2&\color{blue}6\end{pmatrix} + (\color{blue}3) det \begin{pmatrix}\color{red}4&\color{green}5\\\color{red}2&\color{green}4\end{pmatrix} \\
+              =& + (\color{yellow}1) det \begin{pmatrix}\color{magenta}5&\color{cyan}6\\\color{magenta}4&\color{cyan}6\end{pmatrix} - (\color{magenta}2) det \begin{pmatrix}\color{yellow}4&\color{cyan}6\\\color{yellow}2&\color{cyan}6\end{pmatrix} + (\color{cyan}3) det \begin{pmatrix}\color{yellow}4&\color{magenta}5\\\color{yellow}2&\color{magenta}4\end{pmatrix} \\
 
-              =& (\color{red}1) (\color{green}5 \times \color{blue}6 - \color{green}4 \times \color{blue}6) - (\color{green}2) (\color{red}4 \times \color{blue}6 - \color{red}2 \times \color{blue}6) + (\color{blue}3) (\color{red}4 \times \color{green}4 - \color{red}2 \times \color{green}5) \\
+              =& (\color{yellow}1) (\color{magenta}5 \times \color{cyan}6 - \color{magenta}4 \times \color{cyan}6) - (\color{magenta}2) (\color{yellow}4 \times \color{cyan}6 - \color{yellow}2 \times \color{cyan}6) + (\color{cyan}3) (\color{yellow}4 \times \color{magenta}4 - \color{yellow}2 \times \color{magenta}5) \\
 
-              =& (\color{red}1) (6) - (\color{green}2) (12) + (\color{blue}3) (6) \\
+              =& (\color{yellow}1) (6) - (\color{magenta}2) (12) + (\color{cyan}3) (6) \\
               =& 6 - 24 + 18 = 0 \therefore \text{the matrix has no inverse} \\
 
             \end{aligned}$$
