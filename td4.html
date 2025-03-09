@@ -2,9 +2,7 @@
 <html>
   <head>
     <title>Mathematics Tutorship - TD4</title>
-
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <link rel="stylesheet" href="https://raw.githack.com/DiegoBarMor/DiegoBarMor.github.io/refs/heads/main/docs/prisma.css">
+    <link rel="stylesheet" href="https://raw.githack.com/DiegoBarMor/chocomint-css/main/chocomint.min.css">
     <link rel="stylesheet" type="text/css" href=style.css>
 
     <script type = "text/x-mathjax-config">
@@ -18,27 +16,44 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav-container">
-        <a href="https://diegobarmor.github.io/">
-          <img class="nav-icon" src="https://diegobarmor.github.io/icons/home.png" alt="Icon">
-        </a>
-        <div class="nav-buttons">
+    <header class="dynamic-navbar" id="navbar">
+      <nav class="chocomint-nav-container">
+        <abbr title="Home DiegoBarMor"><a href="https://diegobarmor.github.io/">
+            <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/home.png" alt="Icon">
+          </a></abbr>
+        <abbr title="Toggle BG Particles">
+          <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/particles.png" alt="Icon"
+            onclick="toggle_particles()">
+        </abbr>
+        <abbr title="Toggle Theme">
+          <img class="icon-neon" src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/icons/theme.png" alt="Icon"
+            onclick="toggle_theme()">
+        </abbr>
+        <div class="chocomint-nav-buttons">
           <a class="button" href="https://diegobarmor.github.io/maths-tutorship/index.html">Index</a>
-          <a class="button" href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html">Cheatsheet</a>
-          <a class="button" href="https://diegobarmor.github.io/maths-tutorship/scripts.html">Scripts</a>
-          <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td1.html">TD 1</a>
-          <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td2.html">TD 2</a>
-          <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td3.html">TD 3</a>
-          <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td4.html">TD 4</a>
-          <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td5.html">TD 5</a>
-          <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td6.html">TD 6</a>
-          <a class="button" href="https://diegobarmor.github.io/maths-tutorship/td7.html">TD 7</a>
+          <select id="page-select">
+            <optgroup label="Section">
+              <option value="index">---</option>
+              <option value="cheatsheet">Cheatsheet</option>
+              <option value="scripts">Scripts</option>
+            </optgroup>
+            <optgroup label="TD">
+              <option value="td1">TD 1</option>
+              <option value="td2">TD 2</option>
+              <option value="td3">TD 3</option>
+              <option value="td4">TD 4</option>
+              <option value="td5">TD 5</option>
+              <option value="td6">TD 6</option>
+              <option value="td7">TD 7</option>
+            </optgroup>
+          </select>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    <div class="contents"> <h1>TD 4</h1>
+    <main id="main">
+      <h1>TD 4</h1>
+
       <h2>Index</h2>
         <ul>
           <li><a href="#analysis">Function Analysis</a></li>
@@ -794,6 +809,13 @@
           </p>
 
 
-    </div>
+    </main>
+
+    <div id="bg-animation-container"></div>
+
   </body>
+
+  <script src="https://raw.githack.com/DiegoBarMor/chocomint-css/main/chocomint.min.js"></script>
+  <script src="navbar.js"></script>
+
 </html>
