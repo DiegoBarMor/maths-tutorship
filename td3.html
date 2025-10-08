@@ -77,6 +77,35 @@
           </p>
 
         <h3>Exercise 1b</h3>
+          </p>
+            $$\begin{aligned}
+              &\lim_{x \to 1} \frac{3x^3 - 2x + 1}{x^2 - 1} \\
+              = \frac{x^{-2}}{x^{-2}} &\lim_{x \to \infty} \frac{3x^3 - 2x + 1}{x^2 - 1} \\
+              = &\lim_{x \to 1} \frac{3x - \frac{2}{x} + \frac{1}{x^2}}{1 - \frac{1}{x^2}} \\
+              = &\frac{\lim_{x \to 1} 3x - \frac{2}{x} + \frac{1}{x^2}}{\lim_{x \to 1} 1 - \frac{1}{x^2}} \\
+              &\\
+              \begin{split}
+                \frac{\lim_{x \to 1^-} 3x - \frac{2}{x} + \frac{1}{x^2}}{\lim_{x \to 1^-} 1 - \frac{1}{x^2}} \\
+                \longrightarrow \frac{3(1^-) - \frac{2}{(1^-)} + \frac{1}{(1^-)^2}}{1 - \frac{1}{(1^-)^2}} \\
+                \longrightarrow \frac{3 - 2 + 1}{1 - \frac{1}{1^-}} \\
+                \longrightarrow \frac{2}{1 - 1^-} \\
+                \longrightarrow \frac{2}{0^-} \\
+                \longrightarrow -\infty \\
+              \end{split}
+              \qquad & \qquad \qquad \qquad \qquad
+              \begin{split}
+                \frac{\lim_{x \to 1^+} 3x - \frac{2}{x} + \frac{1}{x^2}}{\lim_{x \to 1^+} 1 - \frac{1}{x^2}} \\
+                \longrightarrow \frac{3(1^+) - \frac{2}{(1^+)} + \frac{1}{(1^+)^2}}{1 - \frac{1}{(1^+)^2}} \\
+                \longrightarrow \frac{3 - 2 + 1}{1 - \frac{1}{1^+}} \\
+                \longrightarrow \frac{2}{1 - 1^+} \\
+                \longrightarrow \frac{2}{0^+} \\
+                \longrightarrow +\infty \\
+              \end{split}
+            \end{aligned}$$
+          </p>
+
+
+        <h3>Exercise 1c</h3>
           <p>
             $$\begin{aligned}
               &\lim_{x \to \infty} e^{x^2} - e^x \\
