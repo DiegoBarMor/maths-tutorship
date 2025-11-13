@@ -690,11 +690,11 @@
                   $$\begin{aligned}
                     x'_0 &\approx \pi(2n + \frac{1}{12}) \\
                     f''(\frac{\pi}{12}) &> 0 \Rightarrow min \\
-                    x'_0 &\approx \pi(2n + \frac{6}{12}) \\
+                    x'_0 &= \pi(2n + \frac{6}{12}) \\
                     f''(\frac{6\pi}{12}) &< 0 \Rightarrow max \\
                     x'_0 &\approx \pi(2n + \frac{11}{12}) \\
                     f''(\frac{11\pi}{12}) &> 0 \Rightarrow min \\
-                    x'_0 &\approx \pi(2n + \frac{18}{12}) \\
+                    x'_0 &= \pi(2n + \frac{18}{12}) \\
                     f''(\frac{18\pi}{12}) &< 0 \Rightarrow max \\
                   \end{aligned}$$
                 </td>
@@ -715,14 +715,22 @@
             </tbody></table>
           </p>
 
-        <h3>Explanation of $f(x) = 2sin^2(x)-sin(x)-1$</h3>
+        <h3>Verbose explanation of $f(x) = 2sin^2(x)-sin(x)-1$</h3>
           <h4>Background</h4>
           <p>
             <ul>
-              <li>Keep in mind the properties of $sin(x)$, either by observing its behavior in the <b>unit circle</b> or its <b>plot</b> (both available <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#trigonometrics">here</a>).</li>
+              <li>Keep in mind the properties of $sin(x)$, either by observing its behavior in the <b>unit circle</b> or its <b>plot</b> (both available <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#trigonometrics">here</a>). Remember that the circle can be traversed <b>counterclockwise</b> for positive angles or <b>clockwise</b> for negative angles, but the corresponding $sin(\theta)$ value will be the same.
+              <figure>
+                <img class="img" src="figures/unit_circle-pos_neg.png" alt="figures/unit_circle-pos_neg.png">
+              </figure>
+              </li>
               <li>It's important to remember that the <b>inverse function</b> of $sin()$ is $arcsin()$. This means that if $y = sin(x)$, then $x = arcsin(y)$. In simple words, an expression such as $\theta = arcsin(v)$ represents the question "<i>what angle $\theta$ would produce the value $v$ when applying $sin()$ to $\theta$?</i>".</li>
-              <li>Now recall that $sin(\theta)$ has a <b>periodicity</b> of $2n\pi$, where $n$ is an integer (i.e. $n \in \mathbb{Z}$). In other words, $sin(\theta) = sin(\theta-2n\pi)$. This means that if the whole domain of $\theta \in \mathbb{R}$ is considered, then the same value of $v = sin(\theta)$ can be obtained with $v = sin(\theta+2n\pi)$ with infinitely many possible values for $n$. If $arcsin()$ is now applied taking into account this periodicity, then $arcsin(v) = arcsin(sin(\theta - 2n\pi))$ or simply $arcsin(v) = \theta - 2n\pi$, which can also be rewritten as $\theta = arcsin(v) + 2n\pi$.</li>
-              <li>The <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#trigonometrics">unit circle</a> shows that almost always there will be a pair of angles $\alpha \neq \beta$ such that $sin(\alpha) = sin(\beta)$. The only case when $\alpha = \beta$ is for $sin(\frac{\pi}{2}) = 1$ and $sin(\frac{\pi}{2}) = -1$. Therefore, if $arcsin(x)$ is allowed to have multiple codomain values associated to a single value of $x$, then it will be often the case that solving $\theta = arcsin(x)$ will yield a set of two different solutions: $\theta \in \{\alpha, \beta\}$.</li>
+              <li>Now recall that $sin(\theta)$ has a <b>periodicity</b> of $2n\pi$, where $n$ is an integer (i.e. $n \in \mathbb{Z}$). In other words, $sin(\theta) = sin(\theta-2n\pi)$. This means that if the whole domain of $\theta \in \mathbb{R}$ is considered, then the same value of $v = sin(\theta)$ can be obtained with $v = sin(\theta+2n\pi)$ with infinitely many possible values for $n$. If $arcsin()$ is now applied taking into account this periodicity, then $arcsin(v) = arcsin(sin(\theta - 2n\pi))$ or simply $arcsin(v) = \theta - 2n\pi$, which can also be rewritten as <b>$\theta = arcsin(v) + 2n\pi$</b>.</li>
+              <li>The <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#trigonometrics">unit circle</a> shows that there is always a pair of angles $\alpha, \beta$ such that $sin(\alpha) = sin(\beta)$. This angles are related by $\alpha + \beta = \pi$. Indeed, note that the only cases when $\alpha = \beta$ is for $sin(\frac{\pi}{2}) = 1$ and $sin(\frac{-\pi}{2}) = -1$. Therefore, it will be often the case that solving $arcsin(x)$ will yield a set of two different solutions: $\theta \in \{\alpha, \beta\}$, or as often presented in this exercise: <b>$\theta \in \{\alpha, \pi - \alpha\}$</b>, where $\alpha = arcsin(x)$.
+              <figure>
+                <img class="img" src="figures/unit_circle-angle_pair.png" alt="figures/unit_circle-angle_pair.png">
+              </figure>
+              </li>
             </ul>
           </p>
 
@@ -735,7 +743,7 @@
             <ul>
               <li><b class="neon-marked">Vertical asymptotes</b>: There are no points $x_a$ (i.e. $x$ position where a vertical asymptote occurs) because there are no values of $x^*$ (i.e. $x$ values where the function is undefined i.e. outside the domain of $f(x)$) for this function. So there are <b>no vertical asymptotes</b> for $f(x)$</li>
 
-              <li><b class="neon-marked">Horizontal asymptotes</b>: There are <b>no horizontal asymptotes</b> $y_a$ (i.e. $y$ position where a horizontal asymptote occurs) because the limits at boundaries don't converge to any non-infinite number. Note that this is not related to the fact that the codomain of $f(x)$ is bounded between $-1$ and $2$ (as seen later): the oscillatory nature of $sin(x)$ means that $f(x)$ doesn't converge to a concrete value at $lim_{x \to \infty} f(x)$.</li>
+              <li><b class="neon-marked">Horizontal asymptotes</b>: There are <b>no horizontal asymptotes</b> $y_a$ (i.e. $y$ position where a horizontal asymptote occurs) because the limits at boundaries don't converge to any non-infinite number. Note that this is not related to the fact that the codomain of $f(x)$ is bounded between two finite numbers: the oscillatory nature of $sin(x)$ means that $f(x)$ doesn't converge to a concrete value at $lim_{x \to \infty} f(x)$.</li>
             </ul>
 
           <h4>Limits at Boundaries</h4>
@@ -748,52 +756,109 @@
               <li><b class="neon-marked">X-axis</b>: Solve $f(x)=0$.
                 <ol>
                   <li>In this case, consider $g(x)=sin(x)$. Then $f(g(x))$ is a simple a quadratic expression: $f(g) = 2g^2-g-1$. It can be factorized into $2g^2-g-1 = (2g+1)(g-1)$. It means that $f(g) = 0$ has two solutions when $g=g_0$, namely $g_0 \in \{-\frac{1}{2}, 1\}$.</li> <br>
-                  <li>Going back to finding $x_0$, recall that $sin(x - 2n\pi) = g(x)$ ($2n\pi$ accounts for periodicity). Now, $arcsin$ can be applied to both sides, $arcsin(sin(x - 2n\pi)) = arcsin(g(x))$, which simplifies to $arcsin(g(x)) = x - 2n\pi$ by definition. These means that the points where $f(x)$ intercept the x-axis, namely $x_0$ where $f(x_0) = 0$, can be found by computing $x_0 = arcsin(g_0) + 2n\pi$.</li> <br>
+                  <li>Going back to finding $x_0$, recall that $sin(x - 2n\pi) = g(x)$ (with $2n\pi$ that accounts for periodicity). Now, $arcsin$ can be applied to both sides, $arcsin(sin(x - 2n\pi)) = arcsin(g(x))$, which simplifies to $arcsin(g(x)) = x - 2n\pi$ by definition. These means that the points where $f(x)$ intercept the x-axis, namely $x_0$ where $f(x_0) = 0$, can be found by computing <b>$x_0 = arcsin(g_0) + 2n\pi$</b>.</li> <br>
                   <li>
-                    Now the <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#trigonometrics">unit circle</a> can be used to infer the behavior of $arcsin()$ with respect to $g_0 \in \{-\frac{1}{2}, 1\}$. The unit circle is useful to observe that the same angle can be represented in different ways, e.g. $\frac{3\pi}{2}$ is the same as $\frac{-\pi}{2}$
+                    Now the <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#trigonometrics">unit circle</a> can be used to infer the behavior of $arcsin()$ with respect to $g_0 \in \{-\frac{1}{2}, 1\}$. The unit circle is useful to recall that the same angle can be represented either positively or negatively, e.g. $\frac{3\pi}{2}$ behaves the same as $\frac{-\pi}{2}$
                     <ul>
-                      <li><b>$g_0 = -\frac{1}{2}$</b>: $sin(\theta)$ can yield $-\frac{1}{2}$ either when $\theta = -\frac{\pi}{6}$ (i.e. $-30$ or $330$ degrees) or when $\theta = \pi + \frac{\pi}{6}$ (i.e. $180 + 30 = 210$ degrees). Therefore, given $g_0 = -\frac{1}{2}$, $arcsin(g_0) + 2n\pi$ evaluates to either $-\frac{\pi}{6} + 2n\pi$ or $\pi + \frac{\pi}{6} + 2n\pi$. <br> Hence $x_0 \in \{(2n-\frac{1}{6})\pi, (2n+\frac{7}{6})\pi\}$ are two x-axis intercepts.</li>
-                      <li><b>$g_0 = 1$</b>: $sin(\theta)$ yields $1$ only when $\theta = \frac{\pi}{2}$ (i.e. $90$ degrees). Note that the solution to the exercise above follows the idea of an angle pair $\alpha, \beta$ for every arcsine computed, but in this case $\alpha = \beta$. So, given $g_0 = 1$, $arcsin(g_0) + 2n\pi$ evaluates to $\frac{\pi}{2} + 2n\pi$</li> <br> Hence $x_0 \in \{(2n-\frac{3}{6})\pi\}$ is another x-axis intercept.
+                      <li><b class="neon-marked">$g_0 = -\frac{1}{2}$</b>: $sin(\theta)$ can yield $-\frac{1}{2}$ either when $\theta = -\frac{\pi}{6}$ (i.e. $-30$ or $330$ degrees) or when $\theta = \pi + \frac{\pi}{6}$ (i.e. $180 + 30 = 210$ degrees). Therefore, given $g_0 = -\frac{1}{2}$, $arcsin(g_0) + 2n\pi$ evaluates to either $-\frac{\pi}{6} + 2n\pi$ or $\pi + \frac{\pi}{6} + 2n\pi$.<br>Hence <b>$x_0 \in \{(2n-\frac{1}{6})\pi, (2n+\frac{7}{6})\pi\}$</b> are two x-axis intercepts.</li>
+                      <li><b class="neon-marked">$g_0 = 1$</b>: $sin(\theta)$ yields $1$ only when $\theta = \frac{\pi}{2}$ (i.e. $90$ degrees). Note that the solution to the exercise above follows the idea of an angle pair $\alpha, \beta$ for every arcsine computed, but in this case $\alpha = \beta$. So, given $g_0 = 1$, $arcsin(g_0) + 2n\pi$ evaluates to $\frac{\pi}{2} + 2n\pi$.<br>Hence <b>$x_0 \in \{(2n-\frac{3}{6})\pi\}$</b> is another x-axis intercept.</li>
                     </ul>
                   </li>
+                  <li>The final result can be collected into a single expression: <mark>$x_0 \in \{(2n-\frac{1}{6})\pi, (2n+\frac{3}{6})\pi, (2n+\frac{7}{6})\pi\}$</mark>.</li>
                 </ol>
               </li> <br>
               <li><b class="neon-marked">Y-axis</b>: Evaluate $f(0)$. In this case, $f(0) = 2sin^2(0)-sin(0)-1 = 2(0)-(0)-1 = -1$.</li>
             </ul>
 
           <h4>Increasing-Decreasing Intervals</h4>
-            <p>
-              Compute the first derivative as usual:
-              $$\begin{aligned}
-                f'(x) &= 2(2sin(x))cos(x) - cos(x) \\
-                      &= (4sin(x) - 1) cos(x) = 0 \\
-              \end{aligned}$$
+            <h5>Solving the derivative</h5>
+              <p>
+                Compute the first derivative as usual:
+                $$\begin{aligned}
+                  f'(x) &= 2(2sin(x))cos(x) - cos(x) \\
+                        &= (4sin(x) - 1) cos(x) = 0 \\
+                \end{aligned}$$
 
-              In its factorized form, $(4sin(x) - 1) cos(x) = 0$ can be satisfied either by $(4sin(x) - 1) = 0$ or $cos(x) = 0$. This will yield the x-coordinates $x'_0$ where a local minimum or maximum is present.
-              <ul>
-                <li><b>$4sin(x) - 1 = 0$</b>: This can be rearrenged into $sin(x) = \frac{1}{4}$</li>
-              </ul>
-            </p>
+                In its factorized form, $(4sin(x) - 1) cos(x) = 0$ can be satisfied either by $(4sin(x) - 1) = 0$ or $cos(x) = 0$. This will yield the x-coordinates $x'_0$ where a local minimum or maximum is present.
+                <ul>
+                  <li><b class="neon-marked">$4sin(x) - 1 = 0$</b>: This can be rearrenged into $sin(x) = \frac{1}{4}$. As mentioned before, this means that there could be two solutions $sin(x'_0) = \frac{1}{4} \Rightarrow x'_0 \in \{2n\pi+\theta, 2n\pi+\pi-\theta\}$, with $\theta=arcsin(\frac{1}{4}) \approx 0.25 \approx \frac{\pi}{12}$. From here, one obtains the approximate solutions <b>$x'_0 \in \{\pi(2n + \frac{1}{12}), \pi(2n + \frac{11}{12})\}$</b>.</li>
+                  <li><b class="neon-marked">$cos(x) = 0$</b>: In this case, because cosine is symmetric (i.e. $cos(x) = cos(-x)$), the pair of solutions follow the schema $\{2n\pi+\theta, 2n\pi-\theta\}$ instead. Furthermore, the unit circle shows that $arccos(0) = \frac{\pi}{2}$. Therefore, the solutions for this factor correspond to $x'_0 \in \{\pi(2n + \frac{1}{2}), \pi(2n - \frac{1}{2})\}$, which can be also represented as <b>$x'_0 \in \{\pi(2n + \frac{6}{12}), \pi(2n + \frac{18}{12})\}$</b> ("$18$" because $\frac{18}{12}=\frac{3}{2}$ and $cos(\frac{3}{2}) = cos(-\frac{1}{2})$).</li>
+                </ul>
+
+                The final result can be collected into a single expression: <mark>$x'_0 \in \{\pi(2n + \frac{1}{12}), \pi(2n + \frac{6}{12}), \pi(2n + \frac{11}{12}), \pi(2n + \frac{18}{12})\}$</mark>.
+              </p>
+
+              <h5>Getting the intervals</h5>
+                <p>
+                  As always, the <b>increasing-decreasing intervals</b> can be found by evaluating the sign of $f'(x)$ at any position $x$ between two local minima/maxima. In this case, $n$ can be set to $n=0$ for simplicity of the numerical evaluations. Note that the last range to be evaluated is between the last $x'_0$ value, $\frac{18 \pi}{12}$, and the first one, $\frac{1 \pi}{12}$, because the function is periodic and repeats after $\frac{24 \pi}{12}$. an extra $+2$ is added to the expression to account for this.
+                  $$\begin{aligned}
+                    f'(x) > 0, && x &\in (\pi(2n + \frac{1}{12}), \pi(2n + \frac{6}{12})) && (+) \\
+                    f'(x) < 0, && x &\in (\pi(2n + \frac{6}{12}), \pi(2n + \frac{11}{12})) && (-) \\
+                    f'(x) > 0, && x &\in (\pi(2n + \frac{11}{12}), \pi(2n + \frac{18}{12})) && (+) \\
+                    f'(x) < 0, && x &\in (\pi(2n + \frac{18}{12}), \pi(2n + 2 + \frac{1}{12})) && (-) \\
+                  \end{aligned}$$
+                </p>
 
           <h4>Concave-Convex Intervals</h4>
-            <p>
+            <h5>Solving the derivative</h5>
+              <p>
+                Now, the second derivative must be computed.
+                $$\begin{aligned}
+                  f''(x) &= (4cos(x))(cos(x)) + (4sin(x) - 1)(-sin(x)) \\
+                  &= 4(cos^2(x) - sin^2(x)) + sin(x) \\
+                  &= 4(1 - sin^2(x) - sin^2(x)) + sin(x) \\
+                  &= -8sin^2(x) + sin(x) + 4 = 0 \Rightarrow \text{ use quadratic formula} \\
+                \end{aligned}$$
 
-            </p>
+                This quadratic expression isn't suitable for factorizing, so the quadratic formula should be used instead. Consider a variable $g=sin(x)$ and apply thr formula to $-8g^2 + g + 4$. According to it, $-8g^2 + g + 4 = 0$ is satisfied when $g \in \{\frac{1-\sqrt{129}}{16}, \frac{1+\sqrt{129}}{16}\}$. This can be used to found the values for $x''_0$ (i.e. values of $x$ that satisfy $f''(x)=0$).
+                <ul>
+                  <li><b class="neon-marked">$sin(x) = \frac{1-\sqrt{129}}{16}$</b>: The two plausible solutions are given by $x''_0 \in \{2n\pi+\theta, 2n\pi+\pi-\theta\}$. Here, $\theta=arcsin(\frac{1-\sqrt{129}}{16}) \approx -0.70 \approx -\frac{8\pi}{36}$. Hence, the approximate solutions are given by $x''_0 \in \{2n\pi-\frac{8\pi}{36}, 2n\pi+\pi+\frac{8\pi}{36}\}$. These can also be represented as <b>$x''_0 \in \{\pi(2n-\frac{8}{36}), \pi(2n+\frac{44}{36})\}$</b> ("$44$" because $36-(-8)=44$). </li>
+                  <li><b class="neon-marked">$sin(x) = \frac{1+\sqrt{129}}{16}$</b>: The two plausible solutions are given by $x''_0 \in \{2n\pi+\theta, 2n\pi+\pi-\theta\}$. Here, $\theta=arcsin(\frac{1+\sqrt{129}}{16}) \approx 0.88 \approx \frac{10\pi}{36}$. Hence, the approximate solutions are given by $x''_0 \in \{2n\pi+\frac{10\pi}{36}, 2n\pi+\pi-\frac{10\pi}{36}\}$. These can also be represented as <b>$x''_0 \in \{\pi(2n+\frac{10}{36}), \pi(2n+\frac{26}{36})\}$</b> ("$26$" because $36-(10)=26$).</li>
+                </ul>
+
+                The final result can be collected into a single expression: <mark>$x''_0 \in \{\pi(2n-\frac{8}{36}), \pi(2n+\frac{10}{36}), \pi(2n+\frac{26}{36}), \pi(2n+\frac{44}{36})\}$</mark>.
+              </p>
+
+            <h5>Getting the intervals</h5>
+              <p>
+                Similar to the increasing-decreasing intervals, the <b>concave-convex intervals</b> are found by observing the sign of $f''(x)$ at any position $x$ between a pair of consecutive $x''_0$ values. The same considerations about periodicity as taken as before.
+                $$\begin{aligned}
+                  f''(x) > 0, && x &\in (\pi(2n-\frac{8}{36}), \pi(2n+\frac{10}{36})) && (\cup) \\
+                  f''(x) < 0, && x &\in (\pi(2n+\frac{10}{36}), \pi(2n+\frac{26}{36})) && (\cap) \\
+                  f''(x) > 0, && x &\in (\pi(2n+\frac{26}{36}), \pi(2n+\frac{44}{36})) && (\cup) \\
+                  f''(x) < 0, && x &\in (\pi(2n+\frac{44}{36}), \pi(2n + 2 -\frac{8}{36})) && (\cap) \\
+                \end{aligned}$$
+              </p>
 
           <h4>Maximum-Minimum Points</h4>
             <p>
-
+              The x-coordinates at which <b>maximum-minimum points</b> are present were previously found by studying the first derivative (i.e. they correspond to $x'_0$ that satisfy $f'(x'_0) = 0$). To know whether they are minima or maxima, the $x'_0$ values should be plugged into $f''(x)$. The output's sign will determine if they correspond to maxima or minima. Again, consider $n=0$ for simplicity.
+              $$\begin{aligned}
+                f''(\frac{\pi}{12}) &> 0 \Rightarrow min \\
+                f''(\frac{6\pi}{12}) &< 0 \Rightarrow max \\
+                f''(\frac{11\pi}{12}) &> 0 \Rightarrow min \\
+                f''(\frac{18\pi}{12}) &< 0 \Rightarrow max \\
+              \end{aligned}$$
             </p>
 
           <h4>Inflection Points</h4>
             <p>
-
+              The <b>inflection points</b> are in the values of $x$ where $f''(x)=0$. That is, they're the values $x''_0$ that were found previously.
+              $$\begin{aligned}
+                x''_0 &\approx \pi(2n-\frac{8}{36}) \\
+                x''_0 &\approx \pi(2n+\frac{10}{36}) \\
+                x''_0 &\approx \pi(2n+\frac{26}{36}) \\
+                x''_0 &\approx \pi(2n+\frac{44}{36}) \\
+              \end{aligned}$$
             </p>
 
           <h4>Plot</h4>
             <p>
-
+              All the information gathered before can be used to sketch the plot. This is where it turns useful to have grouped the relevant x-coordinates under a common denominator (e.g. $x_0 \in \{(2n-\frac{1}{6})\pi, (2n+\frac{3}{6})\pi, (2n+\frac{7}{6})\pi\}$); it makes it easier to place the points in their correct locations.
             </p>
+            <figure>
+              <img class="img" src="figures/td4-1g.png" alt="figures/td4-1g.png">
+            </figure>
 
 
       <h2 id="problems">Problems</h2>
