@@ -62,6 +62,31 @@
 
 
       <h2 id="analysis">Function Analysis</h2>
+        <h3>General approach</h3>
+          <p>
+            <ol>
+              <li>Determine the <b>domain</b> of the function by noting whether there are any points or ranges where the function is undefined. This often happens when a value of $x$ would lead to a denominator equal to $0$, or a negative input inside a pure square root or logarithm, for example.</li>
+              <li>Check for the <b>axes intercepts</b>. For the <b>y-axis</b>, this is simply done by evaluating $f(0)$. For the <b>x-axis</b>, it's achieved by solving $f(x)=0$. Note that a function might not have intercepts. In the case of the <b>y-axis</b>, this happens if $0$ is not part of the domain of $f(x)$. In the case of the <b>x-axis</b>, it happens when $f(x)=0$ has no real solutions.</li>
+              <li>Calculate the <b>limits at the boundaries</b> of the function. For example, if the domain of $f(x)$ is $x \in (-\infty,1) \cup (2,3) \cup (5,+\infty)$, then the following limits should be computed (being careful to approach either to the left or to the right in each case for $2$, $3$ and $5$):
+                $$\lim_{x \to -\infty} f(x) \quad \lim_{x \to 1^-} f(x) \quad \lim_{x \to 2^+} f(x) \quad \lim_{x \to 3^-} f(x) \quad \lim_{x \to 5^+} f(x) \quad \lim_{x \to +\infty} f(x) \quad$$
+              </li>
+              <li>These limits also reveal whether there are any vertical or horizontal <b>asymptotes</b>:
+                <ul>
+                  <li>
+                    Given $x^*$ a finite boundary of $f(x)$, a vertical asymptote is present at $x_a=x^*$ when $\lim_{x \to x*}f(x) = \pm \infty$
+                  </li>
+                  <li>
+                    A horizontal asymptote is present at $y_a$ when $\lim_{x \to \infty} = y_a \not= \infty$
+                  </li>
+                </ul>
+              </li>
+              <li>Compute the first derivative $f'(x)$. Then, the values of $x$ at which $f'(x)=0$, here called $x'_0$, will correspond to the location of <b>maximum/minimum points</b>. Evaluating the sign of $f'(x)$ before and after these $x'_0$ values also helps, in order to know the <b>increasing-decreasing intervals</b>.</li>
+              <li>Compute the second derivative $f''(x)$. Then, the values of $x$ at which $f''(x)=0$, here called $x''_0$, can point to locations where a change of concavity occurs. The <b>concave-convex intervals</b> can be determined by evaluating the sign of $f''(x)$ before and after these $x''_0$ values. The second derivate is also useful to know whether the $x'_0$ points correspond to <b>local maxima or minima</b>, by evaluating $f''(x'_0)$:
+                $$f''(x'_0) < 0 \Rightarrow max \\ f''(x'_0) > 0 \Rightarrow min \\$$
+              </li>
+            </ol>
+          </p>
+
         <h3>Exercise 1</h3>
           <p>
             <table class="tg scrollable"><thead>
@@ -89,17 +114,6 @@
                   \end{aligned}$$
                 </td>
                 <td class="tg-0pky"> <!-- Asymptotes -->
-                  <ul>
-                    <li>
-                      Given $x^*$ a finite boundary of $f(x)$, <br>
-                      a vertical asymptote is present at <br>
-                      $x_a=x^*$ when $\lim_{x \to x*}f(x) = \infty$
-                    </li>
-                    <li>
-                      A horizontal asymptote is present at <br>
-                      $y_a$ when $\lim_{x \to \infty} = y_a \not= \infty$
-                    </li>
-                  </ul>
                   $$\begin{aligned}
                     x_a &\in \{\} \text{ because } x^* \in \{\} \\
                     && \\
@@ -649,7 +663,7 @@
                     f'(x) > 0, && x &\in (\pi(2n + \frac{1}{12}), \pi(2n + \frac{6}{12})) && (+) \\
                     f'(x) < 0, && x &\in (\pi(2n + \frac{6}{12}), \pi(2n + \frac{11}{12})) && (-) \\
                     f'(x) > 0, && x &\in (\pi(2n + \frac{11}{12}), \pi(2n + \frac{18}{12})) && (+) \\
-                    f'(x) < 0, && x &\in (\pi(2n + \frac{18}{12}), \pi(4n + \frac{1}{12})) && (-) \\
+                    f'(x) < 0, && x &\in (\pi(2n + \frac{18}{12}), \pi(2n + 2 + \frac{1}{12})) && (-) \\
                   \end{aligned}$$
                 </td>
                 <td class="tg-0pky"> <!-- Concave-Convex Intervals -->
@@ -669,7 +683,7 @@
                      f''(x) > 0, && x &\in (\pi(2n-\frac{8}{36}), \pi(2n+\frac{10}{36})) && (\cup) \\
                      f''(x) < 0, && x &\in (\pi(2n+\frac{10}{36}), \pi(2n+\frac{26}{36})) && (\cap) \\
                      f''(x) > 0, && x &\in (\pi(2n+\frac{26}{36}), \pi(2n+\frac{44}{36})) && (\cup) \\
-                     f''(x) < 0, && x &\in (\pi(2n+\frac{44}{36}), \pi(4n-\frac{8}{36})) && (\cap) \\
+                     f''(x) < 0, && x &\in (\pi(2n+\frac{44}{36}), \pi(2n+2-\frac{8}{36})) && (\cap) \\
                   \end{aligned}$$
                 </td>
                 <td class="tg-0pky"> <!-- Maximum-Minimum Points -->
@@ -700,6 +714,86 @@
               </tr>
             </tbody></table>
           </p>
+
+        <h3>Explanation of $f(x) = 2sin^2(x)-sin(x)-1$</h3>
+          <h4>Background</h4>
+          <p>
+            <ul>
+              <li>Keep in mind the properties of $sin(x)$, either by observing its behavior in the <b>unit circle</b> or its <b>plot</b> (both available <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#trigonometrics">here</a>).</li>
+              <li>It's important to remember that the <b>inverse function</b> of $sin()$ is $arcsin()$. This means that if $y = sin(x)$, then $x = arcsin(y)$. In simple words, an expression such as $\theta = arcsin(v)$ represents the question "<i>what angle $\theta$ would produce the value $v$ when applying $sin()$ to $\theta$?</i>".</li>
+              <li>Now recall that $sin(\theta)$ has a <b>periodicity</b> of $2n\pi$, where $n$ is an integer (i.e. $n \in \mathbb{Z}$). In other words, $sin(\theta) = sin(\theta-2n\pi)$. This means that if the whole domain of $\theta \in \mathbb{R}$ is considered, then the same value of $v = sin(\theta)$ can be obtained with $v = sin(\theta+2n\pi)$ with infinitely many possible values for $n$. If $arcsin()$ is now applied taking into account this periodicity, then $arcsin(v) = arcsin(sin(\theta - 2n\pi))$ or simply $arcsin(v) = \theta - 2n\pi$, which can also be rewritten as $\theta = arcsin(v) + 2n\pi$.</li>
+              <li>The <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#trigonometrics">unit circle</a> shows that almost always there will be a pair of angles $\alpha \neq \beta$ such that $sin(\alpha) = sin(\beta)$. The only case when $\alpha = \beta$ is for $sin(\frac{\pi}{2}) = 1$ and $sin(\frac{\pi}{2}) = -1$. Therefore, if $arcsin(x)$ is allowed to have multiple codomain values associated to a single value of $x$, then it will be often the case that solving $\theta = arcsin(x)$ will yield a set of two different solutions: $\theta \in \{\alpha, \beta\}$.</li>
+            </ul>
+          </p>
+
+          <h4>Domain</h4>
+            <p>
+              $f(x)$ is a polynomial of $sin(x)$, which is defined for all real numbers. Therefore, the domain of $f(x)$ is $\mathbb{R}$.
+            </p>
+
+          <h4>Asymptotes</h4>
+            <ul>
+              <li><b class="neon-marked">Vertical asymptotes</b>: There are no points $x_a$ (i.e. $x$ position where a vertical asymptote occurs) because there are no values of $x^*$ (i.e. $x$ values where the function is undefined i.e. outside the domain of $f(x)$) for this function. So there are <b>no vertical asymptotes</b> for $f(x)$</li>
+
+              <li><b class="neon-marked">Horizontal asymptotes</b>: There are <b>no horizontal asymptotes</b> $y_a$ (i.e. $y$ position where a horizontal asymptote occurs) because the limits at boundaries don't converge to any non-infinite number. Note that this is not related to the fact that the codomain of $f(x)$ is bounded between $-1$ and $2$ (as seen later): the oscillatory nature of $sin(x)$ means that $f(x)$ doesn't converge to a concrete value at $lim_{x \to \infty} f(x)$.</li>
+            </ul>
+
+          <h4>Limits at Boundaries</h4>
+            <p>
+              See explanation above regarding the abscence of horizontal asymptotes for $f(x)$.
+            </p>
+
+          <h4>Axes Intercepts</h4>
+            <ul>
+              <li><b class="neon-marked">X-axis</b>: Solve $f(x)=0$.
+                <ol>
+                  <li>In this case, consider $g(x)=sin(x)$. Then $f(g(x))$ is a simple a quadratic expression: $f(g) = 2g^2-g-1$. It can be factorized into $2g^2-g-1 = (2g+1)(g-1)$. It means that $f(g) = 0$ has two solutions when $g=g_0$, namely $g_0 \in \{-\frac{1}{2}, 1\}$.</li> <br>
+                  <li>Going back to finding $x_0$, recall that $sin(x - 2n\pi) = g(x)$ ($2n\pi$ accounts for periodicity). Now, $arcsin$ can be applied to both sides, $arcsin(sin(x - 2n\pi)) = arcsin(g(x))$, which simplifies to $arcsin(g(x)) = x - 2n\pi$ by definition. These means that the points where $f(x)$ intercept the x-axis, namely $x_0$ where $f(x_0) = 0$, can be found by computing $x_0 = arcsin(g_0) + 2n\pi$.</li> <br>
+                  <li>
+                    Now the <a href="https://diegobarmor.github.io/maths-tutorship/cheatsheet.html#trigonometrics">unit circle</a> can be used to infer the behavior of $arcsin()$ with respect to $g_0 \in \{-\frac{1}{2}, 1\}$. The unit circle is useful to observe that the same angle can be represented in different ways, e.g. $\frac{3\pi}{2}$ is the same as $\frac{-\pi}{2}$
+                    <ul>
+                      <li><b>$g_0 = -\frac{1}{2}$</b>: $sin(\theta)$ can yield $-\frac{1}{2}$ either when $\theta = -\frac{\pi}{6}$ (i.e. $-30$ or $330$ degrees) or when $\theta = \pi + \frac{\pi}{6}$ (i.e. $180 + 30 = 210$ degrees). Therefore, given $g_0 = -\frac{1}{2}$, $arcsin(g_0) + 2n\pi$ evaluates to either $-\frac{\pi}{6} + 2n\pi$ or $\pi + \frac{\pi}{6} + 2n\pi$. <br> Hence $x_0 \in \{(2n-\frac{1}{6})\pi, (2n+\frac{7}{6})\pi\}$ are two x-axis intercepts.</li>
+                      <li><b>$g_0 = 1$</b>: $sin(\theta)$ yields $1$ only when $\theta = \frac{\pi}{2}$ (i.e. $90$ degrees). Note that the solution to the exercise above follows the idea of an angle pair $\alpha, \beta$ for every arcsine computed, but in this case $\alpha = \beta$. So, given $g_0 = 1$, $arcsin(g_0) + 2n\pi$ evaluates to $\frac{\pi}{2} + 2n\pi$</li> <br> Hence $x_0 \in \{(2n-\frac{3}{6})\pi\}$ is another x-axis intercept.
+                    </ul>
+                  </li>
+                </ol>
+              </li> <br>
+              <li><b class="neon-marked">Y-axis</b>: Evaluate $f(0)$. In this case, $f(0) = 2sin^2(0)-sin(0)-1 = 2(0)-(0)-1 = -1$.</li>
+            </ul>
+
+          <h4>Increasing-Decreasing Intervals</h4>
+            <p>
+              Compute the first derivative as usual:
+              $$\begin{aligned}
+                f'(x) &= 2(2sin(x))cos(x) - cos(x) \\
+                      &= (4sin(x) - 1) cos(x) = 0 \\
+              \end{aligned}$$
+
+              In its factorized form, $(4sin(x) - 1) cos(x) = 0$ can be satisfied either by $(4sin(x) - 1) = 0$ or $cos(x) = 0$. This will yield the x-coordinates $x'_0$ where a local minimum or maximum is present.
+              <ul>
+                <li><b>$4sin(x) - 1 = 0$</b>: This can be rearrenged into $sin(x) = \frac{1}{4}$</li>
+              </ul>
+            </p>
+
+          <h4>Concave-Convex Intervals</h4>
+            <p>
+
+            </p>
+
+          <h4>Maximum-Minimum Points</h4>
+            <p>
+
+            </p>
+
+          <h4>Inflection Points</h4>
+            <p>
+
+            </p>
+
+          <h4>Plot</h4>
+            <p>
+
+            </p>
 
 
       <h2 id="problems">Problems</h2>
@@ -805,7 +899,7 @@
               && \\
               b_2'(t) &= 3 \neq 0 \therefore \text{ no min/max under this criterion } \\
             \end{aligned}$$
-            In other words, $b_1$ reaches a minimum at $t = \frac{1}{3}$ with a population of $\frac{149}{27} \approx 5.52$. It then reaches a maximum at $t = 3$ with a population of $15$. On the other hand, $b_2$ grows linearly, so it doesn't have a point where the derivative changes sign and therefore has neither minima nor maxima using this criterion. However, taking into acount this constant linear growth and that the domain is $t \in [0,4]$, it can be easily seen that the values $b_2(0) = 6$ and $b_2(4) = 18$ correspond to the actual minimum and maximum respectively for this function..
+            In other words, $b_1$ reaches a minimum at $t = \frac{1}{3}$ with a population of $\frac{149}{27} \approx 5.52$. It then reaches a maximum at $t = 3$ with a population of $15$. On the other hand, $b_2$ grows linearly, so it doesn't have a point where the derivative changes sign and therefore has neither minima nor maxima using this criterion. However, taking into acount this constant linear growth and that the domain is $t \in [0,4]$, it can be easily seen that the values $b_2(0) = 6$ and $b_2(4) = 18$ correspond to the actual minimum and maximum respectively for this function.
           </p>
 
 
