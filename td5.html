@@ -58,6 +58,7 @@
         <ul>
           <li><a href="#optimization">Optimization Problems</a></li>
           <li><a href="#taylor">Taylor Expansions</a></li>
+          <li><a href="#taylor_bonus">Taylor Expansions (Bonus)</a></li>
         </ul>
 
       <h2 id="optimization">Optimization problems</h2>
@@ -372,6 +373,65 @@
             \end{aligned}$$
           </p>
 
+        <h3 id="taylor_bonus">Bonus</h3>
+          <blockquote>Taylor expansion of $f(x) = \frac{e^{2x^2}-1}{3x^2}$ in $x=0$ up to order $2$.</blockquote>
+
+          <h4>Approximating $f(x) = \frac{e^{2x^2}-1}{3x^2}$ with a simpler expression</h4>
+            <p>
+              For this exercise, it is easier to simplify $f(x)$ first. Consider $f(x)=\frac{g(x)}{3x^2}$, where $g(x)=e^{2x^2}-1$ is the numerator of the function $f(x)$. The idea is to compute the Taylor expansion of the numerator $g(x)$ up to order $2$, and continue the exercise with an approximation of $f(x)$. <br> <br>
+
+              First of all, recall the Taylor expansion of a generic exponential $h(z)=e^z$ around $z=0$ up to order $2$:
+              $$\begin{aligned}
+                h(z) = e^z \qquad h'(z) &= e^z \qquad h''(z) = e^z \\
+                h(z) &\approx h(0) + h'(0) z + h''(0) \frac{z^2}{2} \\
+                &= e^{0} + e^{0} z + e^{0} \frac{z^2}{2} \\
+                &= 1 + z + \frac{z^2}{2} \\
+                \therefore h(z) = e^z &\approx 1 + z + \frac{z^2}{2} \\
+              \end{aligned}$$
+
+              Substituting $z=2x^2$ into this expansion gives:
+              $$\begin{aligned}
+                h(2x^2) = e^{2x^2} &\approx 1 + (2x^2) + \frac{(2x^2)^2}{2} \\
+                &= 1 + (2x^2) + \frac{4x^4}{2} \\
+                &= 1 + 2x^2 + 2x^4 \\
+              \end{aligned}$$
+
+              Now, going back to $g(x)$:
+              $$\begin{aligned}
+                g(x) = e^{2x^2} - 1 &\approx (1 + 2x^2 + 2x^4) - 1 \\
+                g(x) &\approx 2x^2 + 2x^4 \\
+              \end{aligned}$$
+
+              In summary, $f(x)$ can be rewritten as:
+              $$\begin{aligned}
+                f(x) &= \frac{e^{2x^2}-1}{3x^2} && \\
+                f(x) &= \frac{g(x)}{3x^2} \qquad &\text{define } g(x)&=e^{2x^2}-1 \\
+                f(x) &\approx \frac{2x^2 + 2x^4}{3x^2} \qquad &\text{approximate } g(x) &\approx 2x^2 + 2x^4 \\
+                  &= \frac{2+2x^2}{3} \qquad &\text{simplify} & \\
+              \end{aligned}$$
+
+              Which is a much simpler expression to work with for the Taylor expansion of $f(x)$. You might hear this technique referred to as "<b>expanding the numerator</b>".
+            </p>
+
+          <h4>Applying Taylor to $f(x)\approx\frac{2+2x^2}{3}$</h4>
+            <p>
+              Continue the procedure as usual, by computing the first and second derivative of $f(x)$:
+              $$\begin{aligned}
+                f(x) &\approx \frac{2+2x^2}{3} \\
+                f'(x) &\approx \frac{4x}{3} \\
+                f''(x) &\approx \frac{4}{3} \\
+              \end{aligned}$$
+
+              Now, compute the Taylor expansion of $f(x)$ around $a=0$ up to order $2$:
+              $$\begin{aligned}
+                f(x) &\approx f(0) + f'(0)x + f''(0)\frac{x^2}{2} \\
+                &\approx (\frac{2+2(0)^2}{3}) + (\frac{4(0)}{3})x + (\frac{4}{3})\frac{x^2}{2} \\
+                &= \frac{2}{3} + \frac{4x^2}{3 (2)} \\
+                &= \frac{2}{3} + \frac{2}{3}x^2 \\
+              \end{aligned}$$
+
+              So <b>$f(x) \approx \frac{2}{3} + \frac{2}{3}x^2$</b> around $x=0$ up to order $2$.
+            </p>
 
     </main>
 
